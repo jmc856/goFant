@@ -1,0 +1,186 @@
+{
+  "fantasy_content": {
+    "copyright": "Data provided by Yahoo! and STATS, LLC",
+    "game": [
+      {
+        "code": "nfl",
+        "game_id": "371",
+        "game_key": "371",
+        "is_game_over": 0,
+        "is_offseason": 0,
+        "is_registration_over": 0,
+        "name": "Football",
+        "season": "2017",
+        "type": "full",
+        "url": "https://football.fantasysports.yahoo.com/f1"
+      },
+      {
+        "roster_positions": [
+          {
+            "roster_position": {
+              "abbreviation": "QB",
+              "display_name": "Quarterback",
+              "position": "QB",
+              "position_type": "O"
+            }
+          },
+          {
+            "roster_position": {
+              "abbreviation": "WR",
+              "display_name": "Wide Receiver",
+              "position": "WR",
+              "position_type": "O"
+            }
+          },
+          {
+            "roster_position": {
+              "abbreviation": "RB",
+              "display_name": "Running Back",
+              "position": "RB",
+              "position_type": "O"
+            }
+          },
+          {
+            "roster_position": {
+              "abbreviation": "TE",
+              "display_name": "Tight End",
+              "position": "TE",
+              "position_type": "O"
+            }
+          },
+          {
+            "roster_position": {
+              "abbreviation": "W/T",
+              "display_name": "Wide Receiver/Tight End",
+              "position": "W/T",
+              "position_type": "O"
+            }
+          },
+          {
+            "roster_position": {
+              "abbreviation": "W/R",
+              "display_name": "Wide Receiver/Running Back",
+              "position": "W/R",
+              "position_type": "O"
+            }
+          },
+          {
+            "roster_position": {
+              "abbreviation": "W/R/T",
+              "display_name": "Wide Receiver/Running Back/Tight End",
+              "position": "W/R/T",
+              "position_type": "O"
+            }
+          },
+          {
+            "roster_position": {
+              "abbreviation": "Q/W/R/T",
+              "display_name": "Quarterback/Wide Receiver/Running Back/Tight End",
+              "position": "Q/W/R/T",
+              "position_type": "O"
+            }
+          },
+          {
+            "roster_position": {
+              "abbreviation": "K",
+              "display_name": "Kicker",
+              "position": "K",
+              "position_type": "K"
+            }
+          },
+          {
+            "roster_position": {
+              "abbreviation": "DEF",
+              "display_name": "Defense/Special Teams",
+              "position": "DEF",
+              "position_type": "DT"
+            }
+          },
+          {
+            "roster_position": {
+              "abbreviation": "D",
+              "display_name": "Defensive Player",
+              "position": "D",
+              "position_type": "DP"
+            }
+          },
+          {
+            "roster_position": {
+              "abbreviation": "DB",
+              "display_name": "Defensive Back",
+              "position": "DB",
+              "position_type": "DP"
+            }
+          },
+          {
+            "roster_position": {
+              "abbreviation": "DL",
+              "display_name": "Defensive Lineman",
+              "position": "DL",
+              "position_type": "DP"
+            }
+          },
+          {
+            "roster_position": {
+              "abbreviation": "LB",
+              "display_name": "Linebacker",
+              "position": "LB",
+              "position_type": "DP"
+            }
+          },
+          {
+            "roster_position": {
+              "abbreviation": "DT",
+              "display_name": "Defensive Tackle",
+              "position": "DT",
+              "position_type": "DP"
+            }
+          },
+          {
+            "roster_position": {
+              "abbreviation": "DE",
+              "display_name": "Defensive End",
+              "position": "DE",
+              "position_type": "DP"
+            }
+          },
+          {
+            "roster_position": {
+              "abbreviation": "CB",
+              "display_name": "Cornerback",
+              "position": "CB",
+              "position_type": "DP"
+            }
+          },
+          {
+            "roster_position": {
+              "abbreviation": "S",
+              "display_name": "Safety",
+              "position": "S",
+              "position_type": "DP"
+            }
+          },
+          {
+            "roster_position": {
+              "abbreviation": "BN",
+              "display_name": "Bench",
+              "is_bench": 1,
+              "position": "BN"
+            }
+          },
+          {
+            "roster_position": {
+              "abbreviation": "IR",
+              "display_name": "Injured Reserve",
+              "position": "IR"
+            }
+          }
+        ]
+      }
+    ],
+    "refresh_rate": "60",
+    "time": "28.803110122681ms",
+    "xml:lang": "en-US",
+    "yahoo:uri": "/fantasy/v2/game/nfl/roster_positions"
+  }
+}

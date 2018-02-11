@@ -1,0 +1,1130 @@
+{
+  "fantasy_content": {
+    "copyright": "Data provided by Yahoo! and STATS, LLC",
+    "game": [
+      {
+        "code": "nfl",
+        "game_id": "371",
+        "game_key": "371",
+        "is_game_over": 0,
+        "is_offseason": 0,
+        "is_registration_over": 0,
+        "name": "Football",
+        "season": "2017",
+        "type": "full",
+        "url": "https://football.fantasysports.yahoo.com/f1"
+      },
+      {
+        "stat_categories": {
+          "stats": [
+            {
+              "stat": {
+                "display_name": "GP",
+                "name": "Games Played",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  },
+                  {
+                    "position_type": "DP"
+                  },
+                  {
+                    "position_type": "K"
+                  },
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 0
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Pass Att",
+                "name": "Passing Attempts",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 1
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Comp",
+                "name": "Completions",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 2
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Inc",
+                "name": "Incomplete Passes",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "0",
+                "stat_id": 3
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Pass Yds",
+                "name": "Passing Yards",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 4
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Pass TD",
+                "name": "Passing Touchdowns",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 5
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Int",
+                "name": "Interceptions",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "0",
+                "stat_id": 6
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Sack",
+                "name": "Sacks",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "0",
+                "stat_id": 7
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Rush Att",
+                "name": "Rushing Attempts",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 8
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Rush Yds",
+                "name": "Rushing Yards",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 9
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Rush TD",
+                "name": "Rushing Touchdowns",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 10
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Rec",
+                "name": "Receptions",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 11
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Rec Yds",
+                "name": "Receiving Yards",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 12
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Rec TD",
+                "name": "Receiving Touchdowns",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 13
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Ret Yds",
+                "name": "Return Yards",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 14
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Ret TD",
+                "name": "Return Touchdowns",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 15
+              }
+            },
+            {
+              "stat": {
+                "display_name": "2-PT",
+                "name": "2-Point Conversions",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 16
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Fum",
+                "name": "Fumbles",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "0",
+                "stat_id": 17
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Fum Lost",
+                "name": "Fumbles Lost",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "0",
+                "stat_id": 18
+              }
+            },
+            {
+              "stat": {
+                "display_name": "FG 0-19",
+                "name": "Field Goals 0-19 Yards",
+                "position_types": [
+                  {
+                    "position_type": "K"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 19
+              }
+            },
+            {
+              "stat": {
+                "display_name": "FG 20-29",
+                "name": "Field Goals 20-29 Yards",
+                "position_types": [
+                  {
+                    "position_type": "K"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 20
+              }
+            },
+            {
+              "stat": {
+                "display_name": "FG 30-39",
+                "name": "Field Goals 30-39 Yards",
+                "position_types": [
+                  {
+                    "position_type": "K"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 21
+              }
+            },
+            {
+              "stat": {
+                "display_name": "FG 40-49",
+                "name": "Field Goals 40-49 Yards",
+                "position_types": [
+                  {
+                    "position_type": "K"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 22
+              }
+            },
+            {
+              "stat": {
+                "display_name": "FG 50+",
+                "name": "Field Goals 50+ Yards",
+                "position_types": [
+                  {
+                    "position_type": "K"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 23
+              }
+            },
+            {
+              "stat": {
+                "display_name": "FGM 0-19",
+                "name": "Field Goals Missed 0-19 Yards",
+                "position_types": [
+                  {
+                    "position_type": "K"
+                  }
+                ],
+                "sort_order": "0",
+                "stat_id": 24
+              }
+            },
+            {
+              "stat": {
+                "display_name": "FGM 20-29",
+                "name": "Field Goals Missed 20-29 Yards",
+                "position_types": [
+                  {
+                    "position_type": "K"
+                  }
+                ],
+                "sort_order": "0",
+                "stat_id": 25
+              }
+            },
+            {
+              "stat": {
+                "display_name": "FGM 30-39",
+                "name": "Field Goals Missed 30-39 Yards",
+                "position_types": [
+                  {
+                    "position_type": "K"
+                  }
+                ],
+                "sort_order": "0",
+                "stat_id": 26
+              }
+            },
+            {
+              "stat": {
+                "display_name": "FGM 40-49",
+                "name": "Field Goals Missed 40-49 Yards",
+                "position_types": [
+                  {
+                    "position_type": "K"
+                  }
+                ],
+                "sort_order": "0",
+                "stat_id": 27
+              }
+            },
+            {
+              "stat": {
+                "display_name": "FGM 50+",
+                "name": "Field Goals Missed 50+ Yards",
+                "position_types": [
+                  {
+                    "position_type": "K"
+                  }
+                ],
+                "sort_order": "0",
+                "stat_id": 28
+              }
+            },
+            {
+              "stat": {
+                "display_name": "PAT Made",
+                "name": "Point After Attempt Made",
+                "position_types": [
+                  {
+                    "position_type": "K"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 29
+              }
+            },
+            {
+              "stat": {
+                "display_name": "PAT Miss",
+                "name": "Point After Attempt Missed",
+                "position_types": [
+                  {
+                    "position_type": "K"
+                  }
+                ],
+                "sort_order": "0",
+                "stat_id": 30
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Pts Allow",
+                "name": "Points Allowed",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "0",
+                "stat_id": 31
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Sack",
+                "name": "Sack",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 32
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Int",
+                "name": "Interception",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 33
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Fum Rec",
+                "name": "Fumble Recovery",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 34
+              }
+            },
+            {
+              "stat": {
+                "display_name": "TD",
+                "name": "Touchdown",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 35
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Safe",
+                "name": "Safety",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 36
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Blk Kick",
+                "name": "Block Kick",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 37
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Tack Solo",
+                "name": "Tackle Solo",
+                "position_types": [
+                  {
+                    "position_type": "DP"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 38
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Tack Ast",
+                "name": "Tackle Assist",
+                "position_types": [
+                  {
+                    "position_type": "DP"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 39
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Sack",
+                "name": "Sack",
+                "position_types": [
+                  {
+                    "position_type": "DP"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 40
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Int",
+                "name": "Interception",
+                "position_types": [
+                  {
+                    "position_type": "DP"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 41
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Fum Force",
+                "name": "Fumble Force",
+                "position_types": [
+                  {
+                    "position_type": "DP"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 42
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Fum Rec",
+                "name": "Fumble Recovery",
+                "position_types": [
+                  {
+                    "position_type": "DP"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 43
+              }
+            },
+            {
+              "stat": {
+                "display_name": "TD",
+                "name": "Defensive Touchdown",
+                "position_types": [
+                  {
+                    "position_type": "DP"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 44
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Safe",
+                "name": "Safety",
+                "position_types": [
+                  {
+                    "position_type": "DP"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 45
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Pass Def",
+                "name": "Pass Defended",
+                "position_types": [
+                  {
+                    "position_type": "DP"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 46
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Blk Kick",
+                "name": "Block Kick",
+                "position_types": [
+                  {
+                    "position_type": "DP"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 47
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Ret Yds",
+                "name": "Return Yards",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 48
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Kick and Punt Ret TD",
+                "name": "Kickoff and Punt Return Touchdowns",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 49
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Pts Allow 0",
+                "name": "Points Allowed 0 points",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 50
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Pts Allow 1-6",
+                "name": "Points Allowed 1-6 points",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 51
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Pts Allow 7-13",
+                "name": "Points Allowed 7-13 points",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 52
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Pts Allow 14-20",
+                "name": "Points Allowed 14-20 points",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 53
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Pts Allow 21-27",
+                "name": "Points Allowed 21-27 points",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 54
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Pts Allow 28-34",
+                "name": "Points Allowed 28-34 points",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 55
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Pts Allow 35+",
+                "name": "Points Allowed 35+ points",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 56
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Fum Ret TD",
+                "name": "Offensive Fumble Return TD",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 57
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Pick Six",
+                "name": "Pick Sixes Thrown",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "0",
+                "stat_id": 58
+              }
+            },
+            {
+              "stat": {
+                "display_name": "40 Yd Comp",
+                "name": "40+ Yard Completions",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 59
+              }
+            },
+            {
+              "stat": {
+                "display_name": "40 Yd Pass TD",
+                "name": "40+ Yard Passing Touchdowns",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 60
+              }
+            },
+            {
+              "stat": {
+                "display_name": "40 Yd Rush",
+                "name": "40+ Yard Run",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 61
+              }
+            },
+            {
+              "stat": {
+                "display_name": "40 Yd Rush TD",
+                "name": "40+ Yard Rushing Touchdowns",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 62
+              }
+            },
+            {
+              "stat": {
+                "display_name": "40 Yd Rec",
+                "name": "40+ Yard Receptions",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 63
+              }
+            },
+            {
+              "stat": {
+                "display_name": "40 Yd Rec TD",
+                "name": "40+ Yard Receiving Touchdowns",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 64
+              }
+            },
+            {
+              "stat": {
+                "display_name": "TFL",
+                "name": "Tackles for Loss",
+                "position_types": [
+                  {
+                    "position_type": "DP"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 65
+              }
+            },
+            {
+              "stat": {
+                "display_name": "TO Ret Yds",
+                "name": "Turnover Return Yards",
+                "position_types": [
+                  {
+                    "position_type": "DP"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 66
+              }
+            },
+            {
+              "stat": {
+                "display_name": "4 Dwn Stops",
+                "name": "4th Down Stops",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 67
+              }
+            },
+            {
+              "stat": {
+                "display_name": "TFL",
+                "name": "Tackles for Loss",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 68
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Def Yds Allow",
+                "name": "Defensive Yards Allowed",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "0",
+                "stat_id": 69
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Yds Allow Neg",
+                "name": "Defensive Yards Allowed - Negative",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 70
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Yds Allow 0-99",
+                "name": "Defensive Yards Allowed 0-99",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 71
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Yds Allow 100-199",
+                "name": "Defensive Yards Allowed 100-199",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 72
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Yds Allow 200-299",
+                "name": "Defensive Yards Allowed 200-299",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 73
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Yds Allow 300-399",
+                "name": "Defensive Yards Allowed 300-399",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 74
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Yds Allow 400-499",
+                "name": "Defensive Yards Allowed 400-499",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 75
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Yds Allow 500+",
+                "name": "Defensive Yards Allowed 500+",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 76
+              }
+            },
+            {
+              "stat": {
+                "display_name": "3 and Outs",
+                "name": "Three and Outs Forced",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 77
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Targets",
+                "name": "Targets",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 78
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Pass 1st Downs",
+                "name": "Passing 1st Downs",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 79
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Rec 1st Downs",
+                "name": "Receiving 1st Downs",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 80
+              }
+            },
+            {
+              "stat": {
+                "display_name": "Rush 1st Downs",
+                "name": "Rushing 1st Downs",
+                "position_types": [
+                  {
+                    "position_type": "O"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 81
+              }
+            },
+            {
+              "stat": {
+                "display_name": "XPR",
+                "name": "Extra Point Returned",
+                "position_types": [
+                  {
+                    "position_type": "DT"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 82
+              }
+            },
+            {
+              "stat": {
+                "display_name": "XPR",
+                "name": "Extra Point Returned",
+                "position_types": [
+                  {
+                    "position_type": "DP"
+                  }
+                ],
+                "sort_order": "1",
+                "stat_id": 83
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "refresh_rate": "60",
+    "time": "37.435054779053ms",
+    "xml:lang": "en-US",
+    "yahoo:uri": "/fantasy/v2/game/371/stat_categories"
+  }
+}

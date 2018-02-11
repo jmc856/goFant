@@ -1,0 +1,777 @@
+{
+  "fantasy_content": {
+    "copyright": "Data provided by Yahoo! and STATS, LLC",
+    "league": [
+      {
+        "allow_add_to_dl_extra_pos": 0,
+        "current_week": "16",
+        "draft_status": "postdraft",
+        "edit_key": "17",
+        "end_date": "2016-12-26",
+        "end_week": "16",
+        "game_code": "nfl",
+        "is_cash_league": "0",
+        "is_finished": 1,
+        "is_pro_league": "0",
+        "league_id": "150408",
+        "league_key": "359.l.150408",
+        "league_type": "private",
+        "league_update_timestamp": "1483602795",
+        "name": "LeagueofExtraordinaryJackasses",
+        "num_teams": 14,
+        "password": "",
+        "renew": "348_176602",
+        "renewed": "371_549361",
+        "scoring_type": "head",
+        "season": "2016",
+        "short_invitation_url": "https://football.fantasysports.yahoo.com/archive/nfl/2016/150408/invitation?key=f03d17ec7fd1874e&ikey=3366aa7522cf2931",
+        "start_date": "2016-09-08",
+        "start_week": "1",
+        "url": "https://football.fantasysports.yahoo.com/archive/nfl/2016/150408",
+        "weekly_deadline": ""
+      },
+      {
+        "transactions": {
+          "0": {
+            "transaction": [
+              {
+                "status": "successful",
+                "timestamp": "1482608828",
+                "transaction_id": "372",
+                "transaction_key": "359.l.150408.tr.372",
+                "type": "add/drop"
+              },
+              {
+                "players": {
+                  "0": {
+                    "player": [
+                      [
+                        {
+                          "player_key": "359.p.27593"
+                        },
+                        {
+                          "player_id": "27593"
+                        },
+                        {
+                          "name": {
+                            "ascii_first": "C.J.",
+                            "ascii_last": "Fiedorowicz",
+                            "first": "C.J.",
+                            "full": "C.J. Fiedorowicz",
+                            "last": "Fiedorowicz"
+                          }
+                        },
+                        {
+                          "editorial_team_abbr": "Hou"
+                        },
+                        {
+                          "display_position": "TE"
+                        },
+                        {
+                          "position_type": "O"
+                        }
+                      ],
+                      {
+                        "transaction_data": [
+                          {
+                            "destination_team_key": "359.l.150408.t.9",
+                            "destination_team_name": "D-FENCE (CLAP CLAP)",
+                            "destination_type": "team",
+                            "source_type": "freeagents",
+                            "type": "add"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "1": {
+                    "player": [
+                      [
+                        {
+                          "player_key": "359.p.25820"
+                        },
+                        {
+                          "player_id": "25820"
+                        },
+                        {
+                          "name": {
+                            "ascii_first": "Ladarius",
+                            "ascii_last": "Green",
+                            "first": "Ladarius",
+                            "full": "Ladarius Green",
+                            "last": "Green"
+                          }
+                        },
+                        {
+                          "editorial_team_abbr": "Pit"
+                        },
+                        {
+                          "display_position": "TE"
+                        },
+                        {
+                          "position_type": "O"
+                        }
+                      ],
+                      {
+                        "transaction_data": {
+                          "destination_type": "waivers",
+                          "source_team_key": "359.l.150408.t.9",
+                          "source_team_name": "D-FENCE (CLAP CLAP)",
+                          "source_type": "team",
+                          "type": "drop"
+                        }
+                      }
+                    ]
+                  },
+                  "count": 2
+                }
+              }
+            ]
+          },
+          "1": {
+            "transaction": [
+              {
+                "status": "successful",
+                "timestamp": "1482529412",
+                "transaction_id": "371",
+                "transaction_key": "359.l.150408.tr.371",
+                "type": "add"
+              },
+              {
+                "players": {
+                  "0": {
+                    "player": [
+                      [
+                        {
+                          "player_key": "359.p.9010"
+                        },
+                        {
+                          "player_id": "9010"
+                        },
+                        {
+                          "name": {
+                            "ascii_first": "Justin",
+                            "ascii_last": "Forsett",
+                            "first": "Justin",
+                            "full": "Justin Forsett",
+                            "last": "Forsett"
+                          }
+                        },
+                        {
+                          "editorial_team_abbr": "Den"
+                        },
+                        {
+                          "display_position": "RB"
+                        },
+                        {
+                          "position_type": "O"
+                        }
+                      ],
+                      {
+                        "transaction_data": [
+                          {
+                            "destination_team_key": "359.l.150408.t.5",
+                            "destination_team_name": "Ingrams Ebony Thighs",
+                            "destination_type": "team",
+                            "source_type": "freeagents",
+                            "type": "add"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "count": 1
+                }
+              }
+            ]
+          },
+          "10": {
+            "transaction": [
+              {
+                "faab_bid": "3",
+                "status": "successful",
+                "timestamp": "1481704298",
+                "transaction_id": "360",
+                "transaction_key": "359.l.150408.tr.360",
+                "type": "add/drop"
+              },
+              {
+                "players": {
+                  "0": {
+                    "player": [
+                      [
+                        {
+                          "player_key": "359.p.25178"
+                        },
+                        {
+                          "player_id": "25178"
+                        },
+                        {
+                          "name": {
+                            "ascii_first": "Chris",
+                            "ascii_last": "Hogan",
+                            "first": "Chris",
+                            "full": "Chris Hogan",
+                            "last": "Hogan"
+                          }
+                        },
+                        {
+                          "editorial_team_abbr": "NE"
+                        },
+                        {
+                          "display_position": "WR"
+                        },
+                        {
+                          "position_type": "O"
+                        }
+                      ],
+                      {
+                        "transaction_data": [
+                          {
+                            "destination_team_key": "359.l.150408.t.4",
+                            "destination_team_name": "Yalofs Mile time",
+                            "destination_type": "team",
+                            "source_type": "waivers",
+                            "type": "add"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "1": {
+                    "player": [
+                      [
+                        {
+                          "player_key": "359.p.9010"
+                        },
+                        {
+                          "player_id": "9010"
+                        },
+                        {
+                          "name": {
+                            "ascii_first": "Justin",
+                            "ascii_last": "Forsett",
+                            "first": "Justin",
+                            "full": "Justin Forsett",
+                            "last": "Forsett"
+                          }
+                        },
+                        {
+                          "editorial_team_abbr": "Den"
+                        },
+                        {
+                          "display_position": "RB"
+                        },
+                        {
+                          "position_type": "O"
+                        }
+                      ],
+                      {
+                        "transaction_data": {
+                          "destination_type": "waivers",
+                          "source_team_key": "359.l.150408.t.4",
+                          "source_team_name": "Yalofs Mile time",
+                          "source_type": "team",
+                          "type": "drop"
+                        }
+                      }
+                    ]
+                  },
+                  "count": 2
+                }
+              }
+            ]
+          },
+          "100": {
+            "transaction": [
+              {
+                "faab_bid": "7",
+                "status": "successful",
+                "timestamp": "1478682671",
+                "transaction_id": "257",
+                "transaction_key": "359.l.150408.tr.257",
+                "type": "add/drop"
+              },
+              {
+                "players": {
+                  "0": {
+                    "player": [
+                      [
+                        {
+                          "player_key": "359.p.100028"
+                        },
+                        {
+                          "player_id": "100028"
+                        },
+                        {
+                          "name": {
+                            "ascii_first": "Washington",
+                            "ascii_last": "",
+                            "first": "Washington",
+                            "full": "Washington",
+                            "last": ""
+                          }
+                        },
+                        {
+                          "editorial_team_abbr": "Was"
+                        },
+                        {
+                          "display_position": "DEF"
+                        },
+                        {
+                          "position_type": "DT"
+                        }
+                      ],
+                      {
+                        "transaction_data": [
+                          {
+                            "destination_team_key": "359.l.150408.t.4",
+                            "destination_team_name": "Yalofs Mile time",
+                            "destination_type": "team",
+                            "source_type": "waivers",
+                            "type": "add"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "1": {
+                    "player": [
+                      [
+                        {
+                          "player_key": "359.p.24845"
+                        },
+                        {
+                          "player_id": "24845"
+                        },
+                        {
+                          "name": {
+                            "ascii_first": "Torrey",
+                            "ascii_last": "Smith",
+                            "first": "Torrey",
+                            "full": "Torrey Smith",
+                            "last": "Smith"
+                          }
+                        },
+                        {
+                          "editorial_team_abbr": "Phi"
+                        },
+                        {
+                          "display_position": "WR"
+                        },
+                        {
+                          "position_type": "O"
+                        }
+                      ],
+                      {
+                        "transaction_data": {
+                          "destination_type": "waivers",
+                          "source_team_key": "359.l.150408.t.4",
+                          "source_team_name": "Yalofs Mile time",
+                          "source_type": "team",
+                          "type": "drop"
+                        }
+                      }
+                    ]
+                  },
+                  "count": 2
+                }
+              }
+            ]
+          },
+          "101": {
+            "transaction": [
+              {
+                "faab_bid": "15",
+                "status": "successful",
+                "timestamp": "1478682671",
+                "transaction_id": "256",
+                "transaction_key": "359.l.150408.tr.256",
+                "type": "add/drop"
+              },
+              {
+                "players": {
+                  "0": {
+                    "player": [
+                      [
+                        {
+                          "player_key": "359.p.29383"
+                        },
+                        {
+                          "player_id": "29383"
+                        },
+                        {
+                          "name": {
+                            "ascii_first": "Paul",
+                            "ascii_last": "Perkins",
+                            "first": "Paul",
+                            "full": "Paul Perkins",
+                            "last": "Perkins"
+                          }
+                        },
+                        {
+                          "editorial_team_abbr": "NYG"
+                        },
+                        {
+                          "display_position": "RB"
+                        },
+                        {
+                          "position_type": "O"
+                        }
+                      ],
+                      {
+                        "transaction_data": [
+                          {
+                            "destination_team_key": "359.l.150408.t.9",
+                            "destination_team_name": "D-FENCE (CLAP CLAP)",
+                            "destination_type": "team",
+                            "source_type": "waivers",
+                            "type": "add"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "1": {
+                    "player": [
+                      [
+                        {
+                          "player_key": "359.p.28832"
+                        },
+                        {
+                          "player_id": "28832"
+                        },
+                        {
+                          "name": {
+                            "ascii_first": "Terron",
+                            "ascii_last": "Ward",
+                            "first": "Terron",
+                            "full": "Terron Ward",
+                            "last": "Ward"
+                          }
+                        },
+                        {
+                          "editorial_team_abbr": "Atl"
+                        },
+                        {
+                          "display_position": "RB"
+                        },
+                        {
+                          "position_type": "O"
+                        }
+                      ],
+                      {
+                        "transaction_data": {
+                          "destination_type": "waivers",
+                          "source_team_key": "359.l.150408.t.9",
+                          "source_team_name": "D-FENCE (CLAP CLAP)",
+                          "source_type": "team",
+                          "type": "drop"
+                        }
+                      }
+                    ]
+                  },
+                  "count": 2
+                }
+              }
+            ]
+          },
+          "102": {
+            "transaction": [
+              {
+                "status": "successful",
+                "timestamp": "1478444596",
+                "transaction_id": "255",
+                "transaction_key": "359.l.150408.tr.255",
+                "type": "add/drop"
+              },
+              {
+                "players": {
+                  "0": {
+                    "player": [
+                      [
+                        {
+                          "player_key": "359.p.26455"
+                        },
+                        {
+                          "player_id": "26455"
+                        },
+                        {
+                          "name": {
+                            "ascii_first": "Bobby",
+                            "ascii_last": "Rainey",
+                            "first": "Bobby",
+                            "full": "Bobby Rainey",
+                            "last": "Rainey"
+                          }
+                        },
+                        {
+                          "editorial_team_abbr": "Bal"
+                        },
+                        {
+                          "display_position": "RB"
+                        },
+                        {
+                          "position_type": "O"
+                        }
+                      ],
+                      {
+                        "transaction_data": [
+                          {
+                            "destination_team_key": "359.l.150408.t.12",
+                            "destination_team_name": "BrettFleish@Tiffanys",
+                            "destination_type": "team",
+                            "source_type": "freeagents",
+                            "type": "add"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "1": {
+                    "player": [
+                      [
+                        {
+                          "player_key": "359.p.26561"
+                        },
+                        {
+                          "player_id": "26561"
+                        },
+                        {
+                          "name": {
+                            "ascii_first": "Josh",
+                            "ascii_last": "Gordon",
+                            "first": "Josh",
+                            "full": "Josh Gordon",
+                            "last": "Gordon"
+                          }
+                        },
+                        {
+                          "editorial_team_abbr": "Cle"
+                        },
+                        {
+                          "display_position": "WR"
+                        },
+                        {
+                          "position_type": "O"
+                        }
+                      ],
+                      {
+                        "transaction_data": {
+                          "destination_type": "waivers",
+                          "source_team_key": "359.l.150408.t.12",
+                          "source_team_name": "BrettFleish@Tiffanys",
+                          "source_type": "team",
+                          "type": "drop"
+                        }
+                      }
+                    ]
+                  },
+                  "count": 2
+                }
+              }
+            ]
+          },
+          "103": {
+            "transaction": [
+              {
+                "status": "successful",
+                "timestamp": "1478417299",
+                "transaction_id": "254",
+                "transaction_key": "359.l.150408.tr.254",
+                "type": "add/drop"
+              },
+              {
+                "players": {
+                  "0": {
+                    "player": [
+                      [
+                        {
+                          "player_key": "359.p.29560"
+                        },
+                        {
+                          "player_id": "29560"
+                        },
+                        {
+                          "name": {
+                            "ascii_first": "Peyton",
+                            "ascii_last": "Barber",
+                            "first": "Peyton",
+                            "full": "Peyton Barber",
+                            "last": "Barber"
+                          }
+                        },
+                        {
+                          "editorial_team_abbr": "TB"
+                        },
+                        {
+                          "display_position": "RB"
+                        },
+                        {
+                          "position_type": "O"
+                        }
+                      ],
+                      {
+                        "transaction_data": [
+                          {
+                            "destination_team_key": "359.l.150408.t.2",
+                            "destination_team_name": "Fiery Wentz",
+                            "destination_type": "team",
+                            "source_type": "waivers",
+                            "type": "add"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "1": {
+                    "player": [
+                      [
+                        {
+                          "player_key": "359.p.28227"
+                        },
+                        {
+                          "player_id": "28227"
+                        },
+                        {
+                          "name": {
+                            "ascii_first": "Cairo",
+                            "ascii_last": "Santos",
+                            "first": "Cairo",
+                            "full": "Cairo Santos",
+                            "last": "Santos"
+                          }
+                        },
+                        {
+                          "editorial_team_abbr": "KC"
+                        },
+                        {
+                          "display_position": "K"
+                        },
+                        {
+                          "position_type": "K"
+                        }
+                      ],
+                      {
+                        "transaction_data": {
+                          "destination_type": "waivers",
+                          "source_team_key": "359.l.150408.t.2",
+                          "source_team_name": "Fiery Wentz",
+                          "source_type": "team",
+                          "type": "drop"
+                        }
+                      }
+                    ]
+                  },
+                  "count": 2
+                }
+              }
+            ]
+          },
+          "99": {
+            "transaction": [
+              {
+                "faab_bid": "5",
+                "status": "successful",
+                "timestamp": "1478682671",
+                "transaction_id": "258",
+                "transaction_key": "359.l.150408.tr.258",
+                "type": "add/drop"
+              },
+              {
+                "players": {
+                  "0": {
+                    "player": [
+                      [
+                        {
+                          "player_key": "359.p.8838"
+                        },
+                        {
+                          "player_id": "8838"
+                        },
+                        {
+                          "name": {
+                            "ascii_first": "Martellus",
+                            "ascii_last": "Bennett",
+                            "first": "Martellus",
+                            "full": "Martellus Bennett",
+                            "last": "Bennett"
+                          }
+                        },
+                        {
+                          "editorial_team_abbr": "GB"
+                        },
+                        {
+                          "display_position": "TE"
+                        },
+                        {
+                          "position_type": "O"
+                        }
+                      ],
+                      {
+                        "transaction_data": [
+                          {
+                            "destination_team_key": "359.l.150408.t.6",
+                            "destination_team_name": "Hold the door",
+                            "destination_type": "team",
+                            "source_type": "waivers",
+                            "type": "add"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "1": {
+                    "player": [
+                      [
+                        {
+                          "player_key": "359.p.9707"
+                        },
+                        {
+                          "player_id": "9707"
+                        },
+                        {
+                          "name": {
+                            "ascii_first": "Antone",
+                            "ascii_last": "Smith",
+                            "first": "Antone",
+                            "full": "Antone Smith",
+                            "last": "Smith"
+                          }
+                        },
+                        {
+                          "editorial_team_abbr": "TB"
+                        },
+                        {
+                          "display_position": "RB"
+                        },
+                        {
+                          "position_type": "O"
+                        }
+                      ],
+                      {
+                        "transaction_data": {
+                          "destination_type": "waivers",
+                          "source_team_key": "359.l.150408.t.6",
+                          "source_team_name": "Hold the door",
+                          "source_type": "team",
+                          "type": "drop"
+                        }
+                      }
+                    ]
+                  },
+                  "count": 2
+                }
+              }
+            ]
+          },
+          "count": 321
+        }
+      }
+    ],
+    "refresh_rate": "60",
+    "time": "388.77201080322ms",
+    "xml:lang": "en-US",
+    "yahoo:uri": "/fantasy/v2/league/359.l.150408/transactions"
+  }
+}

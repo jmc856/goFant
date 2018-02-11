@@ -1,0 +1,51 @@
+{
+  "fantasy_content": {
+    "copyright": "Data provided by Yahoo! and STATS, LLC",
+    "game": [
+      {
+        "code": "nfl",
+        "game_id": "371",
+        "game_key": "371",
+        "is_game_over": 0,
+        "is_offseason": 0,
+        "is_registration_over": 0,
+        "name": "Football",
+        "season": "2017",
+        "type": "full",
+        "url": "https://football.fantasysports.yahoo.com/f1"
+      },
+      {
+        "position_types": [
+          {
+            "position_type": {
+              "display_name": "Offense",
+              "type": "O"
+            }
+          },
+          {
+            "position_type": {
+              "display_name": "Kickers",
+              "type": "K"
+            }
+          },
+          {
+            "position_type": {
+              "display_name": "Defense/Special Teams",
+              "type": "DT"
+            }
+          },
+          {
+            "position_type": {
+              "display_name": "Defensive Players",
+              "type": "DP"
+            }
+          }
+        ]
+      }
+    ],
+    "refresh_rate": "60",
+    "time": "28.370141983032ms",
+    "xml:lang": "en-US",
+    "yahoo:uri": "/fantasy/v2/game/nfl/position_types"
+  }
+}

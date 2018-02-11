@@ -1,0 +1,37 @@
+{
+  "fantasy_content": {
+    "copyright": "Data provided by Yahoo! and STATS, LLC",
+    "league": [
+      {
+        "allow_add_to_dl_extra_pos": 0,
+        "current_week": "1",
+        "draft_status": "predraft",
+        "edit_key": "1",
+        "end_date": "2017-12-25",
+        "end_week": "16",
+        "game_code": "nfl",
+        "is_cash_league": "0",
+        "is_pro_league": "0",
+        "league_id": "102542",
+        "league_key": "371.l.102542",
+        "league_type": "private",
+        "league_update_timestamp": null,
+        "name": "Freedom Fighters",
+        "num_teams": 14,
+        "renew": "359_290892",
+        "renewed": "",
+        "scoring_type": "head",
+        "season": "2017",
+        "short_invitation_url": "https://football.fantasysports.yahoo.com/f1/102542/invitation?key=c8af37c5da76de36&ikey=0201a398ef936386",
+        "start_date": "2017-09-07",
+        "start_week": "1",
+        "url": "https://football.fantasysports.yahoo.com/f1/102542",
+        "weekly_deadline": ""
+      }
+    ],
+    "refresh_rate": "60",
+    "time": "104.65908050537ms",
+    "xml:lang": "en-US",
+    "yahoo:uri": "/fantasy/v2/league/371.l.102542"
+  }
+}

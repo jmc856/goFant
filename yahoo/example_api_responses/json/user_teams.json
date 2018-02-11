@@ -1,0 +1,210 @@
+{
+  "fantasy_content": {
+    "copyright": "Data provided by Yahoo! and STATS, LLC",
+    "refresh_rate": "60",
+    "time": "125.06604194641ms",
+    "users": {
+      "0": {
+        "user": [
+          {
+            "guid": "FHXQLFZ5OTBCGNIUVYADFVBDPU"
+          },
+          {
+            "games": {
+              "0": {
+                "game": [
+                  {
+                    "code": "nfl",
+                    "game_id": "371",
+                    "game_key": "371",
+                    "is_game_over": 0,
+                    "is_offseason": 0,
+                    "is_registration_over": 0,
+                    "name": "Football",
+                    "season": "2017",
+                    "type": "full",
+                    "url": "https://football.fantasysports.yahoo.com/f1"
+                  },
+                  {
+                    "teams": {
+                      "0": {
+                        "team": [
+                          [
+                            {
+                              "team_key": "371.l.102542.t.7"
+                            },
+                            {
+                              "team_id": "7"
+                            },
+                            {
+                              "name": "DDS"
+                            },
+                            {
+                              "is_owned_by_current_login": 1
+                            },
+                            {
+                              "url": "https://football.fantasysports.yahoo.com/f1/102542/7"
+                            },
+                            {
+                              "team_logos": [
+                                {
+                                  "team_logo": {
+                                    "size": "large",
+                                    "url": "https://ct.yimg.com/cy/1487/25264665216_fe066a37b5_192sq.jpg?ct=fantasy"
+                                  }
+                                }
+                              ]
+                            },
+                            [],
+                            {
+                              "waiver_priority": ""
+                            },
+                            {
+                              "faab_balance": "100"
+                            },
+                            {
+                              "number_of_moves": 0
+                            },
+                            {
+                              "number_of_trades": 0
+                            },
+                            {
+                              "roster_adds": {
+                                "coverage_type": "week",
+                                "coverage_value": "1",
+                                "value": "0"
+                              }
+                            },
+                            [],
+                            {
+                              "league_scoring_type": "head"
+                            },
+                            [],
+                            [],
+                            {
+                              "has_draft_grade": 0
+                            },
+                            [],
+                            [],
+                            {
+                              "managers": [
+                                {
+                                  "manager": {
+                                    "email": "jmc856@yahoo.com",
+                                    "guid": "FHXQLFZ5OTBCGNIUVYADFVBDPU",
+                                    "image_url": "https://s.yimg.com/wm/modern/images/default_user_profile_pic_64.png",
+                                    "is_current_login": "1",
+                                    "manager_id": "7",
+                                    "nickname": "JeffC"
+                                  }
+                                },
+                                {
+                                  "manager": {
+                                    "email": "mdlopreto@gmail.com",
+                                    "guid": "GX5RNEX7KUWLQAN6N7TZMIF3VM",
+                                    "image_url": "https://s.yimg.com/wv/images/3598ce050f5eabe4823dc46b7c710df8_64.jpeg",
+                                    "is_comanager": "1",
+                                    "manager_id": "16",
+                                    "nickname": "MichaelL"
+                                  }
+                                }
+                              ]
+                            }
+                          ],
+                          null
+                        ]
+                      },
+                      "1": {
+                        "team": [
+                          [
+                            {
+                              "team_key": "371.l.549361.t.1"
+                            },
+                            {
+                              "team_id": "1"
+                            },
+                            {
+                              "name": "Need Dick"
+                            },
+                            {
+                              "is_owned_by_current_login": 1
+                            },
+                            {
+                              "url": "https://football.fantasysports.yahoo.com/f1/549361/1"
+                            },
+                            {
+                              "team_logos": [
+                                {
+                                  "team_logo": {
+                                    "size": "large",
+                                    "url": "https://ct.yimg.com/cy/1618/25333966195_6fb7aa6a52_192sq.jpg?ct=fantasy"
+                                  }
+                                }
+                              ]
+                            },
+                            [],
+                            {
+                              "waiver_priority": ""
+                            },
+                            {
+                              "faab_balance": "100"
+                            },
+                            {
+                              "number_of_moves": 0
+                            },
+                            {
+                              "number_of_trades": 0
+                            },
+                            {
+                              "roster_adds": {
+                                "coverage_type": "week",
+                                "coverage_value": "1",
+                                "value": "0"
+                              }
+                            },
+                            [],
+                            {
+                              "league_scoring_type": "head"
+                            },
+                            [],
+                            [],
+                            {
+                              "has_draft_grade": 0
+                            },
+                            [],
+                            [],
+                            {
+                              "managers": [
+                                {
+                                  "manager": {
+                                    "email": "jmc856@yahoo.com",
+                                    "guid": "FHXQLFZ5OTBCGNIUVYADFVBDPU",
+                                    "image_url": "https://s.yimg.com/wm/modern/images/default_user_profile_pic_64.png",
+                                    "is_commissioner": "1",
+                                    "is_current_login": "1",
+                                    "manager_id": "1",
+                                    "nickname": "JeffC"
+                                  }
+                                }
+                              ]
+                            }
+                          ],
+                          null
+                        ]
+                      },
+                      "count": 2
+                    }
+                  }
+                ]
+              },
+              "count": 1
+            }
+          }
+        ]
+      },
+      "count": 1
+    },
+    "xml:lang": "en-US",
+    "yahoo:uri": "/fantasy/v2/users;use_login=1/games;game_keys=371/teams"
+  }
+}

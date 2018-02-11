@@ -1,0 +1,236 @@
+{
+  "fantasy_content": {
+    "copyright": "Data provided by Yahoo! and STATS, LLC",
+    "league": [
+      {
+        "allow_add_to_dl_extra_pos": 0,
+        "current_week": "16",
+        "draft_status": "postdraft",
+        "edit_key": "17",
+        "end_date": "2016-12-26",
+        "end_week": "16",
+        "game_code": "nfl",
+        "is_cash_league": "0",
+        "is_finished": 1,
+        "is_pro_league": "0",
+        "league_id": "150408",
+        "league_key": "359.l.150408",
+        "league_type": "private",
+        "league_update_timestamp": "1483602795",
+        "name": "LeagueofExtraordinaryJackasses",
+        "num_teams": 14,
+        "password": "",
+        "renew": "348_176602",
+        "renewed": "371_549361",
+        "scoring_type": "head",
+        "season": "2016",
+        "short_invitation_url": "https://football.fantasysports.yahoo.com/archive/nfl/2016/150408/invitation?key=f03d17ec7fd1874e&ikey=3366aa7522cf2931",
+        "start_date": "2016-09-08",
+        "start_week": "1",
+        "url": "https://football.fantasysports.yahoo.com/archive/nfl/2016/150408",
+        "weekly_deadline": ""
+      },
+      {
+        "transactions": {
+          "0": {
+            "transaction": [
+              {
+                "status": "successful",
+                "timestamp": "1479548775",
+                "tradee_team_key": "359.l.150408.t.2",
+                "tradee_team_name": "Fiery Wentz",
+                "trader_team_key": "359.l.150408.t.1",
+                "trader_team_name": "Need Dick",
+                "transaction_id": "306",
+                "transaction_key": "359.l.150408.tr.306",
+                "type": "trade"
+              },
+              {
+                "players": {
+                  "0": {
+                    "player": [
+                      [
+                        {
+                          "player_key": "359.p.26708"
+                        },
+                        {
+                          "player_id": "26708"
+                        },
+                        {
+                          "name": {
+                            "ascii_first": "Jordan",
+                            "ascii_last": "Reed",
+                            "first": "Jordan",
+                            "full": "Jordan Reed",
+                            "last": "Reed"
+                          }
+                        },
+                        {
+                          "editorial_team_abbr": "Was"
+                        },
+                        {
+                          "display_position": "TE"
+                        },
+                        {
+                          "position_type": "O"
+                        }
+                      ],
+                      {
+                        "transaction_data": [
+                          {
+                            "destination_team_key": "359.l.150408.t.2",
+                            "destination_team_name": "Fiery Wentz",
+                            "destination_type": "team",
+                            "source_team_key": "359.l.150408.t.1",
+                            "source_team_name": "Need Dick",
+                            "source_type": "team",
+                            "type": "trade"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "1": {
+                    "player": [
+                      [
+                        {
+                          "player_key": "359.p.26685"
+                        },
+                        {
+                          "player_id": "26685"
+                        },
+                        {
+                          "name": {
+                            "ascii_first": "Christine",
+                            "ascii_last": "Michael",
+                            "first": "Christine",
+                            "full": "Christine Michael",
+                            "last": "Michael"
+                          }
+                        },
+                        {
+                          "editorial_team_abbr": "Ind"
+                        },
+                        {
+                          "display_position": "RB"
+                        },
+                        {
+                          "position_type": "O"
+                        }
+                      ],
+                      {
+                        "transaction_data": [
+                          {
+                            "destination_team_key": "359.l.150408.t.2",
+                            "destination_team_name": "Fiery Wentz",
+                            "destination_type": "team",
+                            "source_team_key": "359.l.150408.t.1",
+                            "source_team_name": "Need Dick",
+                            "source_type": "team",
+                            "type": "trade"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "2": {
+                    "player": [
+                      [
+                        {
+                          "player_key": "359.p.26817"
+                        },
+                        {
+                          "player_id": "26817"
+                        },
+                        {
+                          "name": {
+                            "ascii_first": "Spencer",
+                            "ascii_last": "Ware",
+                            "first": "Spencer",
+                            "full": "Spencer Ware",
+                            "last": "Ware"
+                          }
+                        },
+                        {
+                          "editorial_team_abbr": "KC"
+                        },
+                        {
+                          "display_position": "RB"
+                        },
+                        {
+                          "position_type": "O"
+                        }
+                      ],
+                      {
+                        "transaction_data": [
+                          {
+                            "destination_team_key": "359.l.150408.t.1",
+                            "destination_team_name": "Need Dick",
+                            "destination_type": "team",
+                            "source_team_key": "359.l.150408.t.2",
+                            "source_team_name": "Fiery Wentz",
+                            "source_type": "team",
+                            "type": "trade"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "3": {
+                    "player": [
+                      [
+                        {
+                          "player_key": "359.p.26658"
+                        },
+                        {
+                          "player_id": "26658"
+                        },
+                        {
+                          "name": {
+                            "ascii_first": "Zach",
+                            "ascii_last": "Ertz",
+                            "first": "Zach",
+                            "full": "Zach Ertz",
+                            "last": "Ertz"
+                          }
+                        },
+                        {
+                          "editorial_team_abbr": "Phi"
+                        },
+                        {
+                          "display_position": "TE"
+                        },
+                        {
+                          "position_type": "O"
+                        }
+                      ],
+                      {
+                        "transaction_data": [
+                          {
+                            "destination_team_key": "359.l.150408.t.1",
+                            "destination_team_name": "Need Dick",
+                            "destination_type": "team",
+                            "source_team_key": "359.l.150408.t.2",
+                            "source_team_name": "Fiery Wentz",
+                            "source_type": "team",
+                            "type": "trade"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "count": 4
+                }
+              }
+            ]
+          },
+          "count": 1
+        }
+      }
+    ],
+    "refresh_rate": "60",
+    "time": "126.7261505127ms",
+    "xml:lang": "en-US",
+    "yahoo:uri": "/fantasy/v2/league/359.l.150408/transactions;team_key=359.l.150408.t.1;types=trade"
+  }
+}

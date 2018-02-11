@@ -1,0 +1,1098 @@
+{
+  "fantasy_content": {
+    "copyright": "Data provided by Yahoo! and STATS, LLC",
+    "league": [
+      {
+        "allow_add_to_dl_extra_pos": 0,
+        "current_week": "1",
+        "draft_status": "predraft",
+        "edit_key": "1",
+        "end_date": "2017-12-25",
+        "end_week": "16",
+        "game_code": "nfl",
+        "is_cash_league": "0",
+        "is_pro_league": "0",
+        "league_id": "102542",
+        "league_key": "371.l.102542",
+        "league_type": "private",
+        "league_update_timestamp": null,
+        "name": "Freedom Fighters",
+        "num_teams": 14,
+        "renew": "359_290892",
+        "renewed": "",
+        "scoring_type": "head",
+        "season": "2017",
+        "short_invitation_url": "https://football.fantasysports.yahoo.com/f1/102542/invitation?key=c8af37c5da76de36&ikey=0201a398ef936386",
+        "start_date": "2017-09-07",
+        "start_week": "1",
+        "url": "https://football.fantasysports.yahoo.com/f1/102542",
+        "weekly_deadline": ""
+      },
+      {
+        "teams": {
+          "0": {
+            "team": [
+              [
+                {
+                  "team_key": "371.l.102542.t.1"
+                },
+                {
+                  "team_id": "1"
+                },
+                {
+                  "name": "JustinCaseYouTucker"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/f1/102542/1"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://ct.yimg.com/cy/8449/29196988062_ff7852d0ac_192sq.jpg?ct=fantasy"
+                      }
+                    }
+                  ]
+                },
+                [],
+                {
+                  "waiver_priority": ""
+                },
+                {
+                  "faab_balance": "100"
+                },
+                {
+                  "number_of_moves": 0
+                },
+                {
+                  "number_of_trades": 0
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": "1",
+                    "value": "0"
+                  }
+                },
+                [],
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                [],
+                {
+                  "has_draft_grade": 0
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "email": "andrew.collins89@gmail.com",
+                        "guid": "R6XYNLHRC4IRMRKJVDOTPBLA2Q",
+                        "image_url": "https://s.yimg.com/wm/modern/images/default_user_profile_pic_64.png",
+                        "is_commissioner": "1",
+                        "manager_id": "1",
+                        "nickname": "Andrew"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "1": {
+            "team": [
+              [
+                {
+                  "team_key": "371.l.102542.t.2"
+                },
+                {
+                  "team_id": "2"
+                },
+                {
+                  "name": "A Gurley Has No Name"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/f1/102542/2"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://ct.yimg.com/cy/8818/28678277164_cb0e12bea5_192sq.jpg?ct=fantasy"
+                      }
+                    }
+                  ]
+                },
+                [],
+                {
+                  "waiver_priority": ""
+                },
+                {
+                  "faab_balance": "100"
+                },
+                {
+                  "number_of_moves": 0
+                },
+                {
+                  "number_of_trades": 0
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": "1",
+                    "value": "0"
+                  }
+                },
+                [],
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                [],
+                {
+                  "has_draft_grade": 0
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "email": "dbowks46@yahoo.com",
+                        "guid": "7GG3BP3VH4X6OVEK3OCLN2RW5M",
+                        "image_url": "https://s.yimg.com/wm/modern/images/default_user_profile_pic_64.png",
+                        "manager_id": "2",
+                        "nickname": "Andrew"
+                      }
+                    },
+                    {
+                      "manager": {
+                        "email": "tripnfall101@yahoo.com",
+                        "guid": "CJLXZYMS3WZEU24DAE3IAT7THE",
+                        "image_url": "https://s.yimg.com/wm/modern/images/default_user_profile_pic_64.png",
+                        "is_comanager": "1",
+                        "manager_id": "15",
+                        "nickname": "Tripp"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "10": {
+            "team": [
+              [
+                {
+                  "team_key": "371.l.102542.t.11"
+                },
+                {
+                  "team_id": "11"
+                },
+                {
+                  "name": "Raw Hyde"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/f1/102542/11"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://s.yimg.com/dh/ap/fantasy/nfl/img/icon_01_100.png"
+                      }
+                    }
+                  ]
+                },
+                [],
+                {
+                  "waiver_priority": ""
+                },
+                {
+                  "faab_balance": "100"
+                },
+                {
+                  "number_of_moves": 0
+                },
+                {
+                  "number_of_trades": 0
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": "1",
+                    "value": "0"
+                  }
+                },
+                [],
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                [],
+                {
+                  "has_draft_grade": 0
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "email": "gladelman@gmail.com",
+                        "guid": "F4I3MNSQAO6M2PFSJOKGQJZQFU",
+                        "image_url": "https://s.yimg.com/wm/modern/images/default_user_profile_pic_64.png",
+                        "manager_id": "11",
+                        "nickname": "gabe"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "11": {
+            "team": [
+              [
+                {
+                  "team_key": "371.l.102542.t.12"
+                },
+                {
+                  "team_id": "12"
+                },
+                {
+                  "name": "Rocket Israel"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/f1/102542/12"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://ct.yimg.com/cy/5753/25398260979_376fa1e626_192sq.jpg?ct=fantasy"
+                      }
+                    }
+                  ]
+                },
+                [],
+                {
+                  "waiver_priority": ""
+                },
+                {
+                  "faab_balance": "100"
+                },
+                {
+                  "number_of_moves": 0
+                },
+                {
+                  "number_of_trades": 0
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": "1",
+                    "value": "0"
+                  }
+                },
+                [],
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                [],
+                {
+                  "has_draft_grade": 0
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "email": "jake.maxwell.cohen@gmail.com",
+                        "guid": "I5T33MFYO2MQT2PEE356Y54JQQ",
+                        "image_url": "https://s.yimg.com/wm/modern/images/default_user_profile_pic_64.png",
+                        "manager_id": "12",
+                        "nickname": "Cohen"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "12": {
+            "team": [
+              [
+                {
+                  "team_key": "371.l.102542.t.13"
+                },
+                {
+                  "team_id": "13"
+                },
+                {
+                  "name": "Tzi...Tzi...ZIKA!"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/f1/102542/13"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://ct.yimg.com/cy/8500/29194572122_02804f394d_192sq.jpg?ct=fantasy"
+                      }
+                    }
+                  ]
+                },
+                [],
+                {
+                  "waiver_priority": ""
+                },
+                {
+                  "faab_balance": "100"
+                },
+                {
+                  "number_of_moves": 0
+                },
+                {
+                  "number_of_trades": 0
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": "1",
+                    "value": "0"
+                  }
+                },
+                [],
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                [],
+                {
+                  "has_draft_grade": 0
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "email": "ytzitzifas@gmail.com",
+                        "guid": "KU3FLASZRUVMIGPJMLZIWSU5H4",
+                        "image_url": "https://s.yimg.com/wm/modern/images/default_user_profile_pic_64.png",
+                        "manager_id": "13",
+                        "nickname": "Yianni"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "13": {
+            "team": [
+              [
+                {
+                  "team_key": "371.l.102542.t.14"
+                },
+                {
+                  "team_id": "14"
+                },
+                {
+                  "name": "vitness_aesthetics"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/f1/102542/14"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://ct.yimg.com/cy/8813/28657781183_25f30b9558_192sq.jpg?ct=fantasy"
+                      }
+                    }
+                  ]
+                },
+                [],
+                {
+                  "waiver_priority": ""
+                },
+                {
+                  "faab_balance": "100"
+                },
+                {
+                  "number_of_moves": 0
+                },
+                {
+                  "number_of_trades": 0
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": "1",
+                    "value": "0"
+                  }
+                },
+                [],
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                [],
+                {
+                  "has_draft_grade": 0
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "email": "ryandandes@yahoo.com",
+                        "guid": "5BSSAWCKTGHZXNZDHLE7RRXAN4",
+                        "image_url": "https://s.yimg.com/wm/modern/images/default_user_profile_pic_64.png",
+                        "manager_id": "14",
+                        "nickname": "Ryan"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "2": {
+            "team": [
+              [
+                {
+                  "team_key": "371.l.102542.t.3"
+                },
+                {
+                  "team_id": "3"
+                },
+                {
+                  "name": "A Tribe Called Cwest"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/f1/102542/3"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://ct.yimg.com/cy/5603/30147468023_1c705edb29_192sq.jpg?ct=fantasy"
+                      }
+                    }
+                  ]
+                },
+                [],
+                {
+                  "waiver_priority": ""
+                },
+                {
+                  "faab_balance": "100"
+                },
+                {
+                  "number_of_moves": 0
+                },
+                {
+                  "number_of_trades": 0
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": "1",
+                    "value": "0"
+                  }
+                },
+                [],
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                [],
+                {
+                  "has_draft_grade": 0
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "email": "afirestone4@gmail.com",
+                        "guid": "7AFRL2B65KNWEGFBHKVK2X3J2A",
+                        "image_url": "https://s.yimg.com/wv/images/6c93ed606f742d4c075bc091633cc072_64.jpg",
+                        "manager_id": "3",
+                        "nickname": "Andy"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "3": {
+            "team": [
+              [
+                {
+                  "team_key": "371.l.102542.t.4"
+                },
+                {
+                  "team_id": "4"
+                },
+                {
+                  "name": "Blackout 2"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/f1/102542/4"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://s.yimg.com/dh/ap/fantasy/nfl/img/icon_10_100.png"
+                      }
+                    }
+                  ]
+                },
+                [],
+                {
+                  "waiver_priority": ""
+                },
+                {
+                  "faab_balance": "100"
+                },
+                {
+                  "number_of_moves": 0
+                },
+                {
+                  "number_of_trades": 0
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": "1",
+                    "value": "0"
+                  }
+                },
+                [],
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                [],
+                {
+                  "has_draft_grade": 0
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "email": "bryan.christofferson1@yahoo.com",
+                        "guid": "XEVSCAXRAEPY32PZMRCLL4RBEI",
+                        "image_url": "https://s.yimg.com/wm/modern/images/default_user_profile_pic_64.png",
+                        "manager_id": "4",
+                        "nickname": "bryan"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "4": {
+            "team": [
+              [
+                {
+                  "team_key": "371.l.102542.t.5"
+                },
+                {
+                  "team_id": "5"
+                },
+                {
+                  "name": "Brandon's Fama Acct"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/f1/102542/5"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://ct.yimg.com/cy/8555/29607689645_6d60f566c0_192sq.jpg?ct=fantasy"
+                      }
+                    }
+                  ]
+                },
+                [],
+                {
+                  "waiver_priority": ""
+                },
+                {
+                  "faab_balance": "100"
+                },
+                {
+                  "number_of_moves": 0
+                },
+                {
+                  "number_of_trades": 0
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": "1",
+                    "value": "0"
+                  }
+                },
+                [],
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                [],
+                {
+                  "has_draft_grade": 0
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "email": "s.furlaud@gmail.com",
+                        "guid": "NGT42SMUVY5TF7XSRFGS5RAIX4",
+                        "image_url": "https://s.yimg.com/wv/images/d9d508282d9a15d185faf9376b9add7b_64.jpg",
+                        "manager_id": "5",
+                        "nickname": "Scott"
+                      }
+                    },
+                    {
+                      "manager": {
+                        "email": "j.grom88@gmail.com",
+                        "guid": "HQ7FK2KRZT3LJOS35EY7Q66R3A",
+                        "image_url": "https://s.yimg.com/wm/modern/images/default_user_profile_pic_64.png",
+                        "is_comanager": "1",
+                        "manager_id": "17",
+                        "nickname": "George"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "5": {
+            "team": [
+              [
+                {
+                  "team_key": "371.l.102542.t.6"
+                },
+                {
+                  "team_id": "6"
+                },
+                {
+                  "name": "Hard Knocks Life"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/f1/102542/6"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://ct.yimg.com/cy/1518/25183895322_199cdc0db8_192sq.jpg?ct=fantasy"
+                      }
+                    }
+                  ]
+                },
+                [],
+                {
+                  "waiver_priority": ""
+                },
+                {
+                  "faab_balance": "100"
+                },
+                {
+                  "number_of_moves": 0
+                },
+                {
+                  "number_of_trades": 0
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": "1",
+                    "value": "0"
+                  }
+                },
+                [],
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                [],
+                {
+                  "has_draft_grade": 0
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "email": "papageorge760@gmail.com",
+                        "guid": "4LXUS22RGHG7B3YQR2OK7P2LVU",
+                        "image_url": "https://s.yimg.com/wm/modern/images/default_user_profile_pic_64.png",
+                        "manager_id": "6",
+                        "nickname": "Alex"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "6": {
+            "team": [
+              [
+                {
+                  "team_key": "371.l.102542.t.7"
+                },
+                {
+                  "team_id": "7"
+                },
+                {
+                  "name": "DDS"
+                },
+                {
+                  "is_owned_by_current_login": 1
+                },
+                {
+                  "url": "https://football.fantasysports.yahoo.com/f1/102542/7"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://ct.yimg.com/cy/1487/25264665216_fe066a37b5_192sq.jpg?ct=fantasy"
+                      }
+                    }
+                  ]
+                },
+                [],
+                {
+                  "waiver_priority": ""
+                },
+                {
+                  "faab_balance": "100"
+                },
+                {
+                  "number_of_moves": 0
+                },
+                {
+                  "number_of_trades": 0
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": "1",
+                    "value": "0"
+                  }
+                },
+                [],
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                [],
+                {
+                  "has_draft_grade": 0
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "email": "jmc856@yahoo.com",
+                        "guid": "FHXQLFZ5OTBCGNIUVYADFVBDPU",
+                        "image_url": "https://s.yimg.com/wm/modern/images/default_user_profile_pic_64.png",
+                        "is_current_login": "1",
+                        "manager_id": "7",
+                        "nickname": "JeffC"
+                      }
+                    },
+                    {
+                      "manager": {
+                        "email": "mdlopreto@gmail.com",
+                        "guid": "GX5RNEX7KUWLQAN6N7TZMIF3VM",
+                        "image_url": "https://s.yimg.com/wv/images/3598ce050f5eabe4823dc46b7c710df8_64.jpeg",
+                        "is_comanager": "1",
+                        "manager_id": "16",
+                        "nickname": "MichaelL"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "7": {
+            "team": [
+              [
+                {
+                  "team_key": "371.l.102542.t.8"
+                },
+                {
+                  "team_id": "8"
+                },
+                {
+                  "name": "Gary"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/f1/102542/8"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://ct.yimg.com/cy/1547/24762204644_d26f93a65e_192sq.jpg?ct=fantasy"
+                      }
+                    }
+                  ]
+                },
+                [],
+                {
+                  "waiver_priority": ""
+                },
+                {
+                  "faab_balance": "100"
+                },
+                {
+                  "number_of_moves": 0
+                },
+                {
+                  "number_of_trades": 0
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": "1",
+                    "value": "0"
+                  }
+                },
+                [],
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                [],
+                {
+                  "has_draft_grade": 0
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "email": "whassup1541@yahoo.com",
+                        "guid": "DGL6ECFYHKNXUOSSORWBPJA3R4",
+                        "image_url": "https://s.yimg.com/wv/images/b7a9a00e1f4dfbe1b07c468b84d98126_64.jpg",
+                        "manager_id": "8",
+                        "nickname": "Mike"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "8": {
+            "team": [
+              [
+                {
+                  "team_key": "371.l.102542.t.9"
+                },
+                {
+                  "team_id": "9"
+                },
+                {
+                  "name": "KhaleEzekiel Elliot"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/f1/102542/9"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://ct.yimg.com/cy/8393/28682944304_33bda49603_192sq.jpg?ct=fantasy"
+                      }
+                    }
+                  ]
+                },
+                [],
+                {
+                  "waiver_priority": ""
+                },
+                {
+                  "faab_balance": "100"
+                },
+                {
+                  "number_of_moves": 0
+                },
+                {
+                  "number_of_trades": 0
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": "1",
+                    "value": "0"
+                  }
+                },
+                [],
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                [],
+                {
+                  "has_draft_grade": 0
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "email": "basketballfantasy@rocketmail.com",
+                        "guid": "G7SM4V7JWKNU7OIC7ZW2UAGAZ4",
+                        "image_url": "https://s.yimg.com/wm/modern/images/default_user_profile_pic_64.png",
+                        "manager_id": "9",
+                        "nickname": "Adblume"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "9": {
+            "team": [
+              [
+                {
+                  "team_key": "371.l.102542.t.10"
+                },
+                {
+                  "team_id": "10"
+                },
+                {
+                  "name": "LawyerByDayy"
+                },
+                [],
+                {
+                  "url": "https://football.fantasysports.yahoo.com/f1/102542/10"
+                },
+                {
+                  "team_logos": [
+                    {
+                      "team_logo": {
+                        "size": "large",
+                        "url": "https://s.yimg.com/dh/ap/fantasy/img/profile_96.png"
+                      }
+                    }
+                  ]
+                },
+                [],
+                {
+                  "waiver_priority": ""
+                },
+                {
+                  "faab_balance": "100"
+                },
+                {
+                  "number_of_moves": 0
+                },
+                {
+                  "number_of_trades": 0
+                },
+                {
+                  "roster_adds": {
+                    "coverage_type": "week",
+                    "coverage_value": "1",
+                    "value": "0"
+                  }
+                },
+                [],
+                {
+                  "league_scoring_type": "head"
+                },
+                [],
+                [],
+                {
+                  "has_draft_grade": 0
+                },
+                [],
+                [],
+                {
+                  "managers": [
+                    {
+                      "manager": {
+                        "email": "ryanlipton@yahoo.com",
+                        "guid": "H6BYSWD2FOPDLBXMJA3LBTKJ4Q",
+                        "image_url": "https://s.yimg.com/wm/modern/images/default_user_profile_pic_64.png",
+                        "manager_id": "10",
+                        "nickname": "Ryan"
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "count": 14
+        }
+      }
+    ],
+    "refresh_rate": "60",
+    "time": "110.55207252502ms",
+    "xml:lang": "en-US",
+    "yahoo:uri": "/fantasy/v2/league/371.l.102542/teams"
+  }
+}
