@@ -1,7 +1,6 @@
 package leagues
 
 import (
-	"gofant/models"
 	"gofant/users"
 	"encoding/xml"
 	"gofant/api"
@@ -29,23 +28,15 @@ func GetUserTeams(env *api.Env, params map[string]string) ([]byte, error) {
 	}
 }
 
-func GetLeagueTeams(req map[string]string) ([]byte, error) {
-	var user users.User
+func GetLeagueTeams(env *api.Env, params map[string]string) ([]byte, error) {
 
-	db := models.OpenDataBase()
-	defer db.Close()
+	_, userErr := users.GetUserFromPassword(env.DB, params["username"], params["password"])
+	if userErr != nil {
+		return nil, userErr
+	}
 
-	// Retrieve user from database
-	db.Where(&users.User{Username: req["Username"],
-		Password: req["Password"],
-	}).First(&user)
-
-	// Retrieve team from database
-	var team Team
-	db.Model(&user).Related(&team)
-
-	if req["Refresh"] == "true" {
-		leagueTeams, err := getLeagueTeams(req["access_token"], formatLeagueKey(req["game_id"], req["league_key"]))
+	if params["Refresh"] == "true" {
+		leagueTeams, err := getLeagueTeams(params["access_token"], formatLeagueKey(params["game_id"], params["league_key"]))
 		if err != nil {
 			return nil, err
 		}

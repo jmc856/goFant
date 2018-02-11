@@ -42,7 +42,7 @@ func getUserTeams(env *api.Env, w http.ResponseWriter, r *http.Request, params m
 }
 
 func getLeagueTeams(env *api.Env, w http.ResponseWriter, r *http.Request, params map[string]string) ([]byte, error) {
-	return leagues.GetLeagueTeams(params)
+	return leagues.GetLeagueTeams(env, params)
 }
 
 func getRoster(env *api.Env, w http.ResponseWriter, r *http.Request, params map[string]string) ([]byte, error) {
