@@ -1,8 +1,6 @@
 package leagues
 
 import (
-	"fmt"
-	"github.com/jmoiron/sqlx"
 	"time"
 )
 
@@ -130,60 +128,4 @@ type Team struct {
 	TeamId		string		`db:"team_id" json:"team_id"`
 	TeamKey		string		`db:"team_key" json:"team_key"`
 	GameId		string		`db:"game_id" json:"game_id"`
-}
-
-const CREATE_TABLE_LEAGUES = `CREATE TABLE IF NOT EXISTS leagues (
-id serial,
-created_at timestamp NOT NULL DEFAULT NOW(),
-name VARCHAR(50) NOT NULL,
-league_key VARCHAR(100) NOT NULL,
-current_week INTEGER NOT NULL,
-draft_status VARCHAR(50) NOT NULL,
-league_type  VARCHAR(50) NOT NULL,
-num_teams    INTEGER NOT NULL,
-season VARCHAR(10) NOT NULL,
-game_id VARCHAR(30) NOT NULL,
-PRIMARY KEY (id),
-UNIQUE (league_key)
-);`
-
-const CREATE_TABLE_TEAMS = `CREATE TABLE IF NOT EXISTS teams (
-id serial,
-created_at timestamp NOT NULL DEFAULT NOW(),
-name VARCHAR(50) NOT NULL,
-league_id INT NOT NULL,
-team_id INT NOT NULL,
-team_key VARCHAR(30) NOT NULL,
--- manager_id INT NOT NULL,
-game_id VARCHAR(30) NOT NULL,
-PRIMARY KEY (id),
-CONSTRAINT fk_league_id FOREIGN KEY (league_id) REFERENCES leagues (id),
-UNIQUE (team_key)
-);`
-
-const CLEAR_ALL_TABLES = `DELETE from teams; DELETE FROM leagues;`
-
-
-func MigrateLeagues(db *sqlx.DB) error {
-	fmt.Println("Creating table leagues")
-	_, err := db.Exec(CREATE_TABLE_LEAGUES)
-	if err != nil {
-		return err
-	}
-
-	fmt.Println("Creating table teams")
-	_, err2 := db.Exec(CREATE_TABLE_TEAMS)
-	if err2 != nil {
-		return err2
-	}
-	return nil
-}
-
-func RemoveLeaguesTables(db *sqlx.DB) error {
-	fmt.Println("Clearing all leagues tables")
-	_, err := db.Exec(CLEAR_ALL_TABLES)
-	if err != nil {
-		return err
-	}
-	return nil
 }

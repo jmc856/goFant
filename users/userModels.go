@@ -2,8 +2,6 @@ package users
 
 import (
 	"time"
-	"fmt"
-	"github.com/jmoiron/sqlx"
 )
 
 // Data structures for receiving Yahoo JSON api calls
@@ -73,91 +71,4 @@ type UserCredential struct {
 type Credentials interface {
 	checkToken() bool
 	refreshToken() string
-}
-
-
-const CREATE_USERS = `CREATE TABLE IF NOT EXISTS users (
-id serial,
-created_at timestamp NOT NULL DEFAULT NOW(),
-updated_at timestamp NOT NULL DEFAULT NOW(),
-last_login timestamp NOT NULL DEFAULT NOW(),
-username VARCHAR(25) NOT NULL,
-password VARCHAR(100) NOT NULL,
-email    VARCHAR(100) NOT NULL DEFAULT '',
-state    VARCHAR(50) NOT NULL,
-PRIMARY KEY (id),
-UNIQUE (username),
-UNIQUE (state)
-);`
-
-
-/*
- one to one: User has one user_profile
-*/
-
-const CREATE_USER_PROFILE = `CREATE TABLE IF NOT EXISTS user_profile (
-id serial,
-user_id int NOT NULL,
-created_at timestamp NOT NULL DEFAULT NOW(),
-updated_at timestamp NOT NULL DEFAULT NOW(),
-first_name VARCHAR(30) NOT NULL DEFAULT '',
-last_name VARCHAR(30) NOT NULL DEFAULT '',
-guid VARCHAR(40) NOT NULL,
-nickname VARCHAR(30) NOT NULL DEFAULT '',
-UNIQUE (guid),
-PRIMARY KEY (user_id),
-CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES users (id)
-);`
-
-/*
- one to one: User has one user_credentials
-*/
-
-const CREATE_USER_CREDENTIALS = `CREATE TABLE IF NOT EXISTS user_credentials (
-id serial,
-user_id int NOT NULL,
-created_at timestamp NOT NULL DEFAULT NOW(),
-updated_at timestamp NOT NULL DEFAULT NOW(),
-access_token VARCHAR(1500) NOT NULL,
-refresh_token VARCHAR(1500) NOT NULL,
-expiration timestamp NOT NULL DEFAULT NOW(),
-type VARCHAR(40),
-PRIMARY KEY (user_id),
-CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES users (id),
-UNIQUE (access_token),
-UNIQUE (refresh_token)
-);`
-
-const CLEAR_ALL_TABLES = `DELETE FROM users; DELETE FROM user_profile; DELETE FROM user_credentials;`
-
-
-func MigrateUsers(db *sqlx.DB) error {
-	fmt.Println("Creating table users")
-	_, err := db.Exec(CREATE_USERS)
-	if err != nil {
-		return err
-	}
-
-	fmt.Println("Creating table user_profiles")
-	_, err2 := db.Exec(CREATE_USER_PROFILE)
-	if err2 != nil {
-		return err2
-	}
-
-	fmt.Println("Creating table user_credentials")
-	_, err3 := db.Exec(CREATE_USER_CREDENTIALS)
-	if err3 != nil {
-		return err3
-	}
-	return nil
-}
-
-func RemoveUsersTables(db *sqlx.DB) error {
-	fmt.Println("Clearing all users tables")
-	_, err := db.Exec(CLEAR_ALL_TABLES)
-	if err != nil {
-		fmt.Println(err)
-		return err
-	}
-	return nil
 }

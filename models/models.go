@@ -36,7 +36,7 @@ type YahooApiError struct {
 const (
 	Host     = "localhost"
 	Port     = 5432
-	Username = "jmc856"
+	Username = "gofant"
 	Password = "trIbe19t"
 	Dbname   = "gofant"
 	testDbname   = "gofant_test"
