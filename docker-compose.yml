@@ -11,6 +11,7 @@ services:
         POSTGRES_USER: gofant
         POSTGRES_DB: gofant
     volumes:
+      - ./postgres-data:/var/lib/postgresql/data
       - ./database/01_users.sql:/docker-entrypoint-initdb.d/01_users.sql
       - ./database/02_leagues.sql:/docker-entrypoint-initdb.d/02_leagues.sql
       - ./database/03_tx.sql:/docker-entrypoint-initdb.d/03_tx.sql
@@ -23,7 +24,5 @@ services:
       - "8080:8080"
     working_dir: "/go/src/gofant"
     command: ["/go/src/gofant/wait-for-pg.sh", "db", "go run main.go"]
-    depends_on:
-      - db
-    environment:
-      - DATABASE_HOST=db
+    links:
+      - db:db
