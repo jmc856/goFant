@@ -34,7 +34,7 @@ type YahooApiError struct {
 }
 
 const (
-	Host     = "localhost"
+	Host     = "db"
 	Port     = 5432
 	Username = "gofant"
 	Password = "trIbe19t"
@@ -43,9 +43,8 @@ const (
 )
 
 func OpenPostgresDataBase() *sqlx.DB {
-	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
-		"password=%s dbname=%s sslmode=disable",
-		Host, Port, Username, Password, Dbname)
+	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s dbname=%s sslmode=disable",
+		Host, Port, Username, Dbname)
 	db, err := sqlx.Open("postgres", psqlInfo)
 	if err != nil {
 		panic(err)

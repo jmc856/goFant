@@ -54,22 +54,22 @@ func (uc UserCredential) refreshToken(db *sqlx.DB) (UserCredential, error) {
 		return UserCredential{}, api.ApiError{Status:"1", Message:"Could not refresh access token"}
 	}
 
-	var uc_result CredentialResult
-	user_contents, _ := ioutil.ReadAll(response.Body)
-	json.Unmarshal(user_contents, &uc_result)
-	new_uc := UserCredential{
-		AccessToken: uc_result.AccessToken,
-		RefreshToken: uc_result.RefreshToken,
-		Expiration: time.Now().Add(time.Hour * time.Duration(uc_result.ExpiresIn/3600)),
-		Type: uc_result.TokenType,
+	var ucResult CredentialResult
+	contents, _ := ioutil.ReadAll(response.Body)
+	json.Unmarshal(contents, &ucResult)
+	ucNew := UserCredential{
+		AccessToken: ucResult.AccessToken,
+		RefreshToken: ucResult.RefreshToken,
+		Expiration: time.Now().Add(time.Hour * time.Duration(ucResult.ExpiresIn/3600)),
+		Type: ucResult.TokenType,
 	}
 
-	if dbErr := db.QueryRowx(update_user_credentials, time.Now(), new_uc.AccessToken, new_uc.RefreshToken, new_uc.Expiration, uc.ID).StructScan(&uc); dbErr != nil {
-		return new_uc, api.ApiError{
+	if dbErr := db.QueryRowx(updateUserCredentials, time.Now(), ucNew.AccessToken, ucNew.RefreshToken, ucNew.Expiration, uc.ID).StructScan(&uc); dbErr != nil {
+		return ucNew, api.ApiError{
 			Status:"1",
 			ErrorString: dbErr.Error(),
 			Message:"Error saving user credentials",
 		}
 	}
-	return new_uc, nil
+	return ucNew, nil
 }

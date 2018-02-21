@@ -23,14 +23,14 @@ func UserSerializer(u User) ([]byte, error) {
 }
 
 func getUserProfileAndCredentialsSerializer(up UserProfile, uc UserCredential) ([]byte, error) {
-	user_profile_result := map[string]interface{}{
+	upResult := map[string]interface{}{
 		"user_profile": up,
 		"user_credentials": uc,
 	}
 
 	result := models.ApiResult{
 		Status: "0",
-		Result: user_profile_result,
+		Result: upResult,
 	}
 	return json.Marshal(result)
 }
@@ -42,7 +42,7 @@ func getFullUserSerializer(u User) ([]byte, error) {
 
 	uc, _ := getUserCredentialsFromUser(db, u)
 	up, _ := getUserProfileFromUser(db, u)
-	user_result := map[string]interface{}{
+	userResult := map[string]interface{}{
 		"id": u.ID,
 		"created_at": u.CreatedAt,
 		"modified_at": u.UpdatedAt,
@@ -53,7 +53,7 @@ func getFullUserSerializer(u User) ([]byte, error) {
 
 	result := models.ApiResult{
 		Status: "0",
-		Result: user_result,
+		Result: userResult,
 	}
 
 	return json.Marshal(result)

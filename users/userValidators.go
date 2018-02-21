@@ -16,13 +16,12 @@ func ValidateCreateUser(r *http.Request) (map[string]string, error) {
 		Email           string
 	}
 	var request CreateUserRequest
-	err := json.NewDecoder(r.Body).Decode(&request)
-	if err != nil {
+	if err := json.NewDecoder(r.Body).Decode(&request); err != nil {
 		return nil, err
 	}
 
-	if errs := validator.Validate(request); errs != nil {
-		return nil, errs
+	if err := validator.Validate(request); err != nil {
+		return nil, err
 	}
 	return map[string]string{"Username": request.Username, "Password": request.Password}, nil
 }
@@ -37,10 +36,10 @@ func ValidateUpdateUser(r *http.Request) (map[string]string, error) {
 
 	}
 	var request UpdateeUserRequest
-	err := json.NewDecoder(r.Body).Decode(&request)
-	if err != nil {
+	if err := json.NewDecoder(r.Body).Decode(&request); err != nil {
 		return nil, err
 	}
+
 	return map[string]string{
 		"username": request.Username,
 		"password": request.Password,

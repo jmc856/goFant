@@ -25,21 +25,22 @@ func generateRandom() string {
 func CreateUser(env *api.Env, params map[string]string) ([]byte, error) {
 
 	// encrypt password
-	password_encrypted, err := encryptPassword(params["Password"])
+	password, err := encryptPassword(params["Password"])
 	if err != nil {
 		return nil, err
 	}
 	state := generateRandom()
 
 	// store user
-	new_user, user_error := insertUser(env.DB, params["Username"], string(password_encrypted), state)
-	if user_error != nil {
-		return nil, user_error
+	userNew, userErr := insertUser(env.DB, params["Username"], string(password), state)
+	if userErr != nil {
+		return nil, userErr
 	}
-	return UserSerializer(new_user)
+	return UserSerializer(userNew)
 }
 
 func UpdateUser(env *api.Env, params map[string]string) ([]byte, error) {
+	fmt.Println(env.DB.DB)
 	u, err := GetUserFromPassword(env.DB, params["username"], params["password"])
 
 	if err != nil {
@@ -48,20 +49,20 @@ func UpdateUser(env *api.Env, params map[string]string) ([]byte, error) {
 		//return notFoundUserErrorSerializer(not_found_user)
 	}
 	// Save new values
-	new_user, err := updateUser(env.DB, u, params["new_username"], params["new_password"], params["new_email"])
+	userNew, err := updateUser(env.DB, u, params["new_username"], params["new_password"], params["new_email"])
 
-	return UserSerializer(new_user)
+	return UserSerializer(userNew)
 
 }
 func CreateUserProfileAndCredentials(db *sqlx.DB,user User, user_contents []byte, token *oauth2.Token) ([]byte, error) {
-	var user_result UserResult
-	json.Unmarshal(user_contents, &user_result)
+	var ur UserResult
+	json.Unmarshal(user_contents, &ur)
 
 	up := UserProfile{
-		Firstname: user_result.Profile.Firstname,
-		Lastname: user_result.Profile.Lastname,
-		Guid: user_result.Profile.Guid,
-		Nickname: user_result.Profile.Nickname,
+		Firstname: ur.Profile.Firstname,
+		Lastname: ur.Profile.Lastname,
+		Guid: ur.Profile.Guid,
+		Nickname: ur.Profile.Nickname,
 	}
 	creds := UserCredential{
 		AccessToken: token.AccessToken,
@@ -70,21 +71,21 @@ func CreateUserProfileAndCredentials(db *sqlx.DB,user User, user_contents []byte
 		Type: token.TokenType,
 	}
 
-	up_new, up_error := insertUserProfile(db, user, up)
-	if up_error != nil {
-		return nil, up_error
+	upNew, dbErr := insertUserProfile(db, user, up)
+	if dbErr != nil {
+		return nil, dbErr
 	}
 
-	uc_new, uc_error := insertUserCredentials(db, user, creds)
-	if uc_error != nil {
-		return nil, uc_error
+	ucNew, dbErr := insertUserCredentials(db, user, creds)
+	if dbErr != nil {
+		return nil, dbErr
 	}
 
-	return getUserProfileAndCredentialsSerializer(up_new, uc_new)
+	return getUserProfileAndCredentialsSerializer(upNew, ucNew)
 }
 
 //Returns a users information according to guid data
-func GetUserProfileFromYahoo(guid string, access_token string) (*http.Response, error) {
+func GetUserProfileFromYahoo(guid string, accessToken string) (*http.Response, error) {
 	var client = &http.Client{
 		Timeout: time.Second * 10,
 	}
@@ -93,7 +94,7 @@ func GetUserProfileFromYahoo(guid string, access_token string) (*http.Response, 
 	if err != nil {
 		return nil, err
 	}
-	req.Header.Add("Authorization", "Bearer " + access_token)
+	req.Header.Add("Authorization", "Bearer " + accessToken)
 
 	response, err := client.Do(req)
 	return response, err
@@ -106,15 +107,15 @@ func LoginUsername(db *sqlx.DB,params map[string]string) ([]byte, error) {
 		return nil, err
 	}
 
-	user_credentials, err := getUserCredentialsFromUser(db, u)
+	uc, err := getUserCredentialsFromUser(db, u)
 
 	// Check access token and refresh if expired
-	if user_credentials.AccessToken != "" {
-		token_fresh := user_credentials.checkToken()
-		if !token_fresh {
-			_, refresh_error := user_credentials.refreshToken(db)
-			if refresh_error != nil {
-				return nil, refresh_error
+	if uc.AccessToken != "" {
+		tokenFresh := uc.checkToken()
+		if !tokenFresh {
+			_, refreshErr := uc.refreshToken(db)
+			if refreshErr != nil {
+				return nil, refreshErr
 			}
 		}
 	}
