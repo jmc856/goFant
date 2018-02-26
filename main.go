@@ -11,5 +11,7 @@ import (
 func main() {
 	// Run Migrations for database Models
 	db := models.OpenPostgresDataBase()
-	fmt.Println(http.ListenAndServe(":8080", handlers.Handlers(db)))
+	port := "8080"
+	fmt.Println("API server runing on port", port)
+	fmt.Println(http.ListenAndServe(fmt.Sprintf(":%v", port), handlers.Handlers(db)))
 }

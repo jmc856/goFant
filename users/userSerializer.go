@@ -3,6 +3,7 @@ package users
 import (
 	"encoding/json"
 	"gofant/models"
+	"gofant/authorization"
 )
 
 func UserSerializer(u User) ([]byte, error) {
@@ -26,6 +27,7 @@ func getUserProfileAndCredentialsSerializer(up UserProfile, uc UserCredential) (
 	upResult := map[string]interface{}{
 		"user_profile": up,
 		"user_credentials": uc,
+		"access_token": authorization.CreateJWT(),
 	}
 
 	result := models.ApiResult{

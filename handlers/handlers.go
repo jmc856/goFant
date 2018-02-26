@@ -1,16 +1,17 @@
 package handlers
 
 import (
+	"fmt"
 	"net/http"
 	"gofant/yahoo"
 	"gofant/users"
 	"gofant/transactions"
 	"gofant/leagues"
 	"gofant/rosters"
-	"fmt"
 	"github.com/gorilla/mux"
 	"gofant/api"
 	"github.com/jmoiron/sqlx"
+	"gofant/authorization"
 )
 
 func handleMain(w http.ResponseWriter, r *http.Request) {
@@ -82,6 +83,7 @@ func Handlers(db *sqlx.DB) *mux.Router {
 
 	r := mux.NewRouter()
 	r.HandleFunc("/", handleMain)
+	r.HandleFunc("/get-token", authorization.GetTokenHandler).Methods("GET")
 	r.Handle("/login", api.Handler{ env, api.Validator{api.ValidateLogin}, handleLogin})
 	r.Handle("/YahooLogin",  api.Handler{env, api.Validator{yahoo.ValidateYahooLogin}, handleYahooLogin})
 	r.Handle("/YahooCallback", api.Handler{env, api.Validator{yahoo.ValidateYahooCallback}, handleYahooCallback})
@@ -96,7 +98,6 @@ func Handlers(db *sqlx.DB) *mux.Router {
 	r.Handle("/rosters/getpositiontypes", api.Handler{ env, api.Validator{rosters.ValidateGetPositionTypes}, getPositionTypes})
 	r.Handle("/rosters/getstatcategories", api.Handler{ env, api.Validator{rosters.ValidateGetStatCategories}, getStatCategories})
 
-
 	r.Handle("/transactions/create", api.Handler{ env, api.Validator{transactions.ValidateCreateTransaction}, createTransaction})
 	r.Handle("/transactions/get", api.Handler{ env, api.Validator{transactions.ValidateGetTransaction}, getTransaction})
 	r.Handle("/transactions/list", api.Handler{env, api.Validator{transactions.ValidateListTransaction}, listTransaction})
@@ -104,4 +105,3 @@ func Handlers(db *sqlx.DB) *mux.Router {
 
 	return r
 }
-

@@ -46,7 +46,7 @@ func DoRequest(apiUrl string, accessToken string) ([]byte, error) {
 		}
 		return nil, ApiError{
 			Status: "1001",
-			Message: fmt.Sprint("%s %s", YahooApiError.Description, response.StatusCode),
+			Message: fmt.Sprintf("%s - %s", YahooApiError.Description, response.StatusCode),
 		}
 	}
 	return contents, nil
