@@ -40,7 +40,7 @@ func (uc UserCredential) refreshToken(db *sqlx.DB) (UserCredential, error) {
 	data.Add("client_secret", os.Getenv("GOFANT_CLIENT_SECRET"))
 	data.Add("grant_type", "refresh_token")
 	data.Add("redirect_uri", "http://127.0.0.1/YahooCallback")
-	data.Add("refresh_token", uc.RefreshToken)
+	data.Add("refresh_token", uc.YahooRefreshToken)
 
 	client := &http.Client{}
 	r, _ := http.NewRequest("POST", apiUrl, bytes.NewBufferString(data.Encode())) // <-- URL-encoded payload
@@ -58,13 +58,14 @@ func (uc UserCredential) refreshToken(db *sqlx.DB) (UserCredential, error) {
 	contents, _ := ioutil.ReadAll(response.Body)
 	json.Unmarshal(contents, &ucResult)
 	ucNew := UserCredential{
-		AccessToken: ucResult.AccessToken,
-		RefreshToken: ucResult.RefreshToken,
+		AccessToken: uc.AccessToken,
+		YahooAccessToken: ucResult.AccessToken,
+		YahooRefreshToken: ucResult.RefreshToken,
 		Expiration: time.Now().Add(time.Hour * time.Duration(ucResult.ExpiresIn/3600)),
 		Type: ucResult.TokenType,
 	}
 
-	if dbErr := db.QueryRowx(updateUserCredentials, time.Now(), ucNew.AccessToken, ucNew.RefreshToken, ucNew.Expiration, uc.ID).StructScan(&uc); dbErr != nil {
+	if dbErr := db.QueryRowx(updateUserCredentials, time.Now(), ucNew.AccessToken, ucNew.YahooAccessToken, ucNew.YahooRefreshToken, ucNew.Expiration, uc.ID).StructScan(&uc); dbErr != nil {
 		return ucNew, api.ApiError{
 			Status:"1",
 			ErrorString: dbErr.Error(),

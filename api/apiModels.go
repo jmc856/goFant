@@ -1,11 +1,12 @@
 package api
 
 import (
+	"net/http"
 	"encoding/json"
 	"github.com/jmoiron/sqlx"
-	"net/http"
 	"log"
 	"fmt"
+	"strings"
 )
 
 type YahooApiError struct {
@@ -72,10 +73,19 @@ func (h Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	log.Println(fmt.Sprintf("Call to %s from %s - %d bytes", r.URL, r.Host, r.ContentLength))
 	params, validationErr := h.Validator.Validate(r)
 	if validationErr != nil {
-		jsonErr, _ := genericeValidationError(validationErr.Error())
+		jsonErr, _ := genericValidationError(validationErr.Error())
 		returnJson(w, jsonErr)
 		return
 	}
+
+	accessToken := r.Header.Get("Authorization")
+	if accessToken != "" {
+		splitToken := strings.Split(accessToken, "Bearer")
+		accessToken = splitToken[1]
+		username, _ := getUserFromAccessToken(h.Env.DB, accessToken)
+		params["username"] = username
+	}
+
 
 	jsonResult, err := h.H(h.Env, w, r, params)
 	if err != nil {
@@ -109,3 +119,14 @@ func returnJson(w http.ResponseWriter, json []byte) int {
 	}
 	return result
 }
+
+func getUserFromAccessToken(db *sqlx.DB, accessToken string) (string, error) {
+	var username string
+	if dbErr := db.Select(&username ,selectUserFromAccessToken, accessToken); dbErr != nil {
+		fmt.Println(dbErr)
+		return "", dbErr
+	}
+	return username, nil
+}
+
+const selectUserFromAccessToken = `SELECT u.username FROM users u JOIN user_credentials uc ON u.id=uc.user_id WHERE uc.access_token=$1`

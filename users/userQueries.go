@@ -38,8 +38,15 @@ func insertUserProfile(db *sqlx.DB, u User, up UserProfile) (UserProfile, error)
 
 func insertUserCredentials(db *sqlx.DB, u User, uc UserCredential) (UserCredential, error) {
 	var ucNew UserCredential
-	if dbErr := db.QueryRowx(createUserCredentials, time.Now(), u.ID, uc.AccessToken, uc.RefreshToken, uc.Expiration, uc.Type).StructScan(&ucNew); dbErr != nil {
-		return UserCredential{}, dbErr
+	if dbErr := db.QueryRowx(createUserCredentials,
+		time.Now(),
+		u.ID,
+		uc.AccessToken,
+		uc.YahooAccessToken,
+		uc.YahooRefreshToken,
+		uc.Expiration,
+		uc.Type).StructScan(&ucNew); dbErr != nil {
+			return UserCredential{}, dbErr
 	}
 	return ucNew, nil
 }
@@ -85,7 +92,7 @@ func updateUser(db *sqlx.DB, user User, username, password, email string) (User,
 
 
 // UserCredential queries
-func getUserCredentialsFromUser(db *sqlx.DB, u User) (UserCredential, error) {
+func getUserCredentials(db *sqlx.DB, u User) (UserCredential, error) {
 	var uc UserCredential
 	if dbErr := db.QueryRowx(selectUserCredentials, u.ID).StructScan(&uc); dbErr != nil {
 		return UserCredential{}, dbErr
@@ -101,16 +108,15 @@ func getUserProfileFromUser(db *sqlx.DB, u User) (UserProfile, error) {
 	return up, nil
 }
 
-
 const selectUserFromUsername = `SELECT id, username, password FROM users WHERE username=$1`
 
 const selectUserCredentials = `SELECT * FROM user_credentials WHERE user_id=$1`
 
 const selectUserProfile = `SELECT * FROM user_profile WHERE user_id=$1`
 
-const updateUserCredentials = `UPDATE user_credentials SET (updated_at, access_token, refresh_token, expiration) =
-                                ($1, $2, $3, $4) WHERE id=$5
-								RETURNING id, user_id, created_at, updated_at, access_token, refresh_token, expiration, type`
+const updateUserCredentials = `UPDATE user_credentials SET (updated_at, access_token, yahoo_access_token, yahoo_refresh_token, expiration) =
+                                ($1, $2, $3, $4, $5) WHERE id=$5
+								RETURNING id, user_id, created_at, updated_at, access_token, yahoo_access_token, yahoo_refresh_token, expiration, type`
 
 const update_user = `UPDATE users SET (updated_at, username, password, email) =  ($1, $2, $3, $4) WHERE id=$5
 					 RETURNING id, created_at, updated_at, username, password, email`
@@ -126,6 +132,7 @@ const createUserProfile = `INSERT INTO user_profile
 				   RETURNING id, user_id, created_at, updated_at, first_name, last_name, guid, nickname`
 
 const createUserCredentials = `INSERT INTO user_credentials
-				  (updated_at, user_id, access_token, refresh_token, expiration, type)
-				   VALUES ($1, $2, $3, $4, $5, $6)
-				   RETURNING id, user_id, created_at, updated_at, access_token, refresh_token, expiration, type`
+				  (updated_at, user_id, access_token, yahoo_access_token, yahoo_refresh_token, expiration, type)
+				   VALUES ($1, $2, $3, $4, $5, $6, $7)
+				   RETURNING id, user_id, created_at, updated_at, access_token, yahoo_access_token, yahoo_refresh_token, expiration, type`
+

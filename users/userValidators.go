@@ -5,6 +5,7 @@ import (
 	"gopkg.in/validator.v2"
 	"net/http"
 	"encoding/json"
+	"fmt"
 )
 
 // Validates and parses request parameters of /login
@@ -37,6 +38,7 @@ func ValidateUpdateUser(r *http.Request) (map[string]string, error) {
 	}
 	var request UpdateeUserRequest
 	if err := json.NewDecoder(r.Body).Decode(&request); err != nil {
+		fmt.Println(err)
 		return nil, err
 	}
 

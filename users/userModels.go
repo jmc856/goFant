@@ -62,8 +62,9 @@ type UserCredential struct {
 	UserID		    int			`db:"user_id" json:"user_id"`
 	CreatedAt       time.Time	`db:"created_at" json:"created_at"`
 	UpdatedAt       time.Time	`db:"updated_at" json:"updated_at"`
-	AccessToken     string		`db:"access_token" json:"access_token"`
-	RefreshToken    string		`db:"refresh_token" json:"refresh_token"`
+	AccessToken     string      `db:"access_token" json:"access_token"`
+	YahooAccessToken     string		`db:"yahoo_access_token" json:"yahoo_access_token"`
+	YahooRefreshToken    string		`db:"yahoo_refresh_token" json:"yahoo_refresh_token"`
 	Expiration      time.Time 	`db:"expiration" json:"expiration"`
 	Type            string		`db:"type" json:"type"`
 }

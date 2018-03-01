@@ -40,12 +40,14 @@ CREATE TABLE IF NOT EXISTS user_credentials (
   user_id int NOT NULL,
   created_at timestamp NOT NULL DEFAULT NOW(),
   updated_at timestamp NOT NULL DEFAULT NOW(),
-  access_token VARCHAR(1500) NOT NULL,
-  refresh_token VARCHAR(1500) NOT NULL,
+  access_token VARCHAR(250) NOT NULL,
+  yahoo_access_token VARCHAR(1500) NOT NULL,
+  yahoo_refresh_token VARCHAR(1500) NOT NULL,
   expiration timestamp NOT NULL DEFAULT NOW(),
   type VARCHAR(40),
   PRIMARY KEY (user_id),
   CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES users (id),
   UNIQUE (access_token),
-  UNIQUE (refresh_token)
+  UNIQUE (yahoo_access_token),
+  UNIQUE (yahoo_refresh_token)
 );

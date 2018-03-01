@@ -42,7 +42,7 @@ func getFullUserSerializer(u User) ([]byte, error) {
 	db := models.OpenPostgresDataBase()
 	defer db.Close()
 
-	uc, _ := getUserCredentialsFromUser(db, u)
+	uc, _ := getUserCredentials(db, u)
 	up, _ := getUserProfileFromUser(db, u)
 	userResult := map[string]interface{}{
 		"id": u.ID,

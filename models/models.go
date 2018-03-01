@@ -26,12 +26,6 @@ type ApiError struct {
 	Message string					`json:"message"`
 }
 
-type YahooApiError struct {
-	Status 		string					`json:"status"`
-	YahooStatus int						`json:"yahoo_status"`
-	Error       string					`json:"error"`
-	Result      map[string]interface{}	`json:"result"`
-}
 
 const (
 	Host     = "db"

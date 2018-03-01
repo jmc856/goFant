@@ -1,7 +1,6 @@
 package users
 
 import (
-	"gofant/api"
 	"net/http"
 	"encoding/json"
 	"fmt"
@@ -9,6 +8,8 @@ import (
 	"golang.org/x/oauth2"
 	"crypto/rand"
 	"github.com/jmoiron/sqlx"
+	"gofant/authorization"
+	"gofant/api"
 )
 
 func generateRandom() string {
@@ -65,8 +66,9 @@ func CreateUserProfileAndCredentials(db *sqlx.DB,user User, user_contents []byte
 		Nickname: ur.Profile.Nickname,
 	}
 	creds := UserCredential{
-		AccessToken: token.AccessToken,
-		RefreshToken: token.RefreshToken,
+		AccessToken: authorization.CreateJWT(),
+		YahooAccessToken: token.AccessToken,
+		YahooRefreshToken: token.RefreshToken,
 		Expiration: token.Expiry,
 		Type: token.TokenType,
 	}
@@ -100,14 +102,14 @@ func GetUserProfileFromYahoo(guid string, accessToken string) (*http.Response, e
 	return response, err
 }
 
-func LoginUsername(db *sqlx.DB,params map[string]string) ([]byte, error) {
+func Login(db *sqlx.DB,params map[string]string) ([]byte, error) {
 	u, err := GetUserFromPassword(db, params["Username"], params["Password"])
 
 	if err != nil {
 		return nil, err
 	}
 
-	uc, err := getUserCredentialsFromUser(db, u)
+	uc, err := getUserCredentials(db, u)
 
 	// Check access token and refresh if expired
 	if uc.AccessToken != "" {

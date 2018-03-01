@@ -4,10 +4,16 @@ import (
 	"gopkg.in/validator.v2"
 	"net/http"
 	"encoding/json"
+	"github.com/gorilla/mux"
 )
 
 
-func genericeValidationError(error string) ([]byte, error) {
+func ValidateGetReq(r *http.Request) (map[string]string, error) {
+	vars := mux.Vars(r)
+	return vars, nil
+}
+
+func genericValidationError(error string) ([]byte, error) {
 	valid := map[string]interface{}{}
 
 	result := ApiError{
