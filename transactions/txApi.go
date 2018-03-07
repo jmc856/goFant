@@ -1,19 +1,17 @@
 package transactions
 
 import (
-	"gofant/models"
 	"gofant/users"
 	"gofant/api"
 	"github.com/jmoiron/sqlx"
 	"strconv"
 )
 
-func CreateTransaction(env *api.Env, params map[string]string) ([]byte, error) {
-	user, userErr :=users.GetUserFromPassword(env.DB, params["username"], params["password"])
+func CreateTransaction(db *sqlx.DB, params map[string]string) ([]byte, error) {
+	user, userErr :=users.GetUserFromPassword(db, params["username"], params["password"])
 	if userErr != nil {
 		return nil, userErr
 	}
-	db := env.DB
 
 	var userTeamSendId int
 	var userTeamReceiveId int
@@ -47,12 +45,9 @@ func CreateTransaction(env *api.Env, params map[string]string) ([]byte, error) {
 }
 
 
-func GetTransaction(params map[string]string) ([]byte, error) {
+func GetTransaction(db *sqlx.DB, params map[string]string) ([]byte, error) {
 	var tx Tx
 	var detail TxDeail
-
-	db := models.OpenPostgresDataBase()
-	defer db.Close()
 
 	rows, _ := db.Queryx(GET_TX, params["transaction_id"])
 	if rows.Next() == false {
@@ -95,8 +90,8 @@ func ListTransactions(db *sqlx.DB, params map[string]string) ([]byte, error) {
 }
 
 
-func AcceptTransaction(env *api.Env, params map[string]string) ([]byte, error) {
-	user, userErr :=users.GetUserFromPassword(env.DB, params["username"], params["password"])
+func AcceptTransaction(db *sqlx.DB, params map[string]string) ([]byte, error) {
+	user, userErr :=users.GetUserFromPassword(db, params["username"], params["password"])
 	if userErr != nil {
 		return nil, userErr
 	}
@@ -104,7 +99,7 @@ func AcceptTransaction(env *api.Env, params map[string]string) ([]byte, error) {
 	var userTeamReceiveId int
 	txId, _ := strconv.Atoi(params["transaction_id"])
 
-	rows, _ := env.DB.Queryx(GET_USER_TEAM_RECEIVE_ID, txId)
+	rows, _ := db.Queryx(GET_USER_TEAM_RECEIVE_ID, txId)
 	if rows.Next() == false {
 		return nil, api.ApiError{
 			Status: api.UnknownError,
@@ -119,7 +114,7 @@ func AcceptTransaction(env *api.Env, params map[string]string) ([]byte, error) {
 
 	var userTeamIds []int
 	var myTx bool
-	env.DB.Select(&userTeamIds, GET_USER_TEAMS_FROM_USER_ID, int(user.ID))
+	db.Select(&userTeamIds, GET_USER_TEAMS_FROM_USER_ID, int(user.ID))
 
 	for _, b := range userTeamIds {
 		if b == userTeamReceiveId {
@@ -132,7 +127,7 @@ func AcceptTransaction(env *api.Env, params map[string]string) ([]byte, error) {
 	}
 
 	var tx Tx
-	env.DB.QueryRowx(ACCEPT_TX, txId).StructScan(&tx)
+	db.QueryRowx(ACCEPT_TX, txId).StructScan(&tx)
 
 	return TxSerializer(tx)
 }

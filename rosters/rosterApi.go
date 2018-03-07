@@ -5,9 +5,10 @@ import (
 	"strings"
 	"fmt"
 	"gofant/api"
+	"github.com/jmoiron/sqlx"
 )
 
-func GetRoster(_ *api.Env, params map[string]string) ([]byte, error) {
+func GetRoster(_ *sqlx.DB, params map[string]string) ([]byte, error) {
 
 	leagueTeamKey := makeLeagueTeamKey(params["league_key"], params["game_id"], params["team_id"])
 
@@ -30,33 +31,33 @@ func GetRoster(_ *api.Env, params map[string]string) ([]byte, error) {
 }
 
 
-func GetPositionTypes(env *api.Env, params map[string]string) ([]byte, error) {
+func GetPositionTypes(db *sqlx.DB, params map[string]string) ([]byte, error) {
 
 	// Refresh database
 	if params["refresh"] == "true" {
-		if err := getAndSavePositionTypes(env.DB, params["access_token"], params["game_key"]); err != nil {
+		if err := getAndSavePositionTypes(db, params["access_token"], params["game_key"]); err != nil {
 			return nil, api.ApiError{}
 		}
 	}
 	// Return current database
 	var positionTypes []PositionType
-	if dbErr := env.DB.Select(&positionTypes, GET_POSITION_TYPES); dbErr != nil {
+	if dbErr := db.Select(&positionTypes, GET_POSITION_TYPES); dbErr != nil {
 		return nil, dbErr
 	}
 	return RosterPositionSerializer(positionTypes)
 
 }
 
-func GetStatCategories(env *api.Env, params map[string]string) ([]byte, error) {
+func GetStatCategories(db *sqlx.DB, params map[string]string) ([]byte, error) {
 	// Refresh database
 	if params["refresh"] == "true" {
-		if err := getAndSaveStatCategories(env.DB, params["access_token"], params["game_key"]); err != nil {
+		if err := getAndSaveStatCategories(db, params["access_token"], params["game_key"]); err != nil {
 			return nil, api.ApiError{}
 		}
 	}
 	// Return current database
 	var statCategories []StatCategory
-	if dbErr := env.DB.Select(&statCategories, GET_STAT_CATEGORIES); dbErr != nil {
+	if dbErr := db.Select(&statCategories, GET_STAT_CATEGORIES); dbErr != nil {
 		return nil, dbErr
 	}
 	return StatCategorySerializer(statCategories)}

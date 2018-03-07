@@ -33,6 +33,9 @@ const (
 	Username = "gofant"
 	Password = "trIbe19t"
 	Dbname   = "gofant"
+
+	testHost = "localhost"
+	testUsername = "postgres"
 	testDbname   = "gofant_test"
 )
 
@@ -49,7 +52,7 @@ func OpenPostgresDataBase() *sqlx.DB {
 func OpenTestPostgresDataBase() *sqlx.DB {
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
 		"password=%s dbname=%s sslmode=disable",
-		Host, Port, Username, Password, testDbname)
+		testHost, Port, testUsername, Password, testDbname)
 	db, err := sqlx.Open("postgres", psqlInfo)
 	if err != nil {
 		panic(err)

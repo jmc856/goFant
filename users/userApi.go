@@ -9,7 +9,6 @@ import (
 	"crypto/rand"
 	"github.com/jmoiron/sqlx"
 	"gofant/authorization"
-	"gofant/api"
 )
 
 func generateRandom() string {
@@ -23,7 +22,12 @@ func generateRandom() string {
 }
 
 
-func CreateUser(env *api.Env, params map[string]string) ([]byte, error) {
+func GetUser(db *sqlx.DB, params map[string]string) ([]byte, error) {
+	fmt.Println(params)
+	return nil, nil
+}
+
+func CreateUser(db *sqlx.DB, params map[string]string) ([]byte, error) {
 
 	// encrypt password
 	password, err := encryptPassword(params["Password"])
@@ -33,16 +37,16 @@ func CreateUser(env *api.Env, params map[string]string) ([]byte, error) {
 	state := generateRandom()
 
 	// store user
-	userNew, userErr := insertUser(env.DB, params["Username"], string(password), state)
+	userNew, userErr := insertUser(db, params["Username"], string(password), state)
 	if userErr != nil {
 		return nil, userErr
 	}
 	return UserSerializer(userNew)
 }
 
-func UpdateUser(env *api.Env, params map[string]string) ([]byte, error) {
-	fmt.Println(env.DB.DB)
-	u, err := GetUserFromPassword(env.DB, params["username"], params["password"])
+func UpdateUser(db *sqlx.DB, params map[string]string) ([]byte, error) {
+
+	u, err := GetUserFromPassword(db, params["username"], params["password"])
 
 	if err != nil {
 		return nil, err
@@ -50,14 +54,14 @@ func UpdateUser(env *api.Env, params map[string]string) ([]byte, error) {
 		//return notFoundUserErrorSerializer(not_found_user)
 	}
 	// Save new values
-	userNew, err := updateUser(env.DB, u, params["new_username"], params["new_password"], params["new_email"])
+	userNew, err := updateUser(db, u, params["new_username"], params["new_password"], params["new_email"])
 
 	return UserSerializer(userNew)
 
 }
-func CreateUserProfileAndCredentials(db *sqlx.DB,user User, user_contents []byte, token *oauth2.Token) ([]byte, error) {
+func CreateUserProfileAndCredentials(db *sqlx.DB,user User, userContents []byte, token *oauth2.Token) ([]byte, error) {
 	var ur UserResult
-	json.Unmarshal(user_contents, &ur)
+	json.Unmarshal(userContents, &ur)
 
 	up := UserProfile{
 		Firstname: ur.Profile.Firstname,
@@ -102,7 +106,7 @@ func GetUserProfileFromYahoo(guid string, accessToken string) (*http.Response, e
 	return response, err
 }
 
-func Login(db *sqlx.DB,params map[string]string) ([]byte, error) {
+func Login(db *sqlx.DB, params map[string]string) ([]byte, error) {
 	u, err := GetUserFromPassword(db, params["Username"], params["Password"])
 
 	if err != nil {

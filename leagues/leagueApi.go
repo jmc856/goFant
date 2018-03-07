@@ -3,10 +3,10 @@ package leagues
 import (
 	"gofant/users"
 	"encoding/xml"
-	"gofant/api"
+	"github.com/jmoiron/sqlx"
 )
 
-func GetUserTeams(env *api.Env, params map[string]string) ([]byte, error) {
+func GetUserTeams(db *sqlx.DB, params map[string]string) ([]byte, error) {
 	if params["Refresh"] == "true" {
 		var result UserTeamApiXml
 		userTeams, err := getUserTeam(params["access_token"], params["game_id"], params["Season"])
@@ -15,7 +15,7 @@ func GetUserTeams(env *api.Env, params map[string]string) ([]byte, error) {
 		}
 		xml.Unmarshal(userTeams, &result)
 
-		if errCreate := saveUserTeams(env.DB, params["access_token"], params["user_id"], result); errCreate != nil {
+		if errCreate := saveUserTeams(db, params["access_token"], params["user_id"], result); errCreate != nil {
 			return nil, errCreate
 		}
 
@@ -28,9 +28,9 @@ func GetUserTeams(env *api.Env, params map[string]string) ([]byte, error) {
 	}
 }
 
-func GetLeagueTeams(env *api.Env, params map[string]string) ([]byte, error) {
+func GetLeagueTeams(db *sqlx.DB, params map[string]string) ([]byte, error) {
 
-	_, userErr := users.GetUserFromPassword(env.DB, params["username"], params["password"])
+	_, userErr := users.GetUserFromPassword(db, params["username"], params["password"])
 	if userErr != nil {
 		return nil, userErr
 	}
