@@ -11,14 +11,20 @@ import (
 
 
 // User queries
-func GetUserFromPassword(db *sqlx.DB, username string, password string) (User, error) {
+
+func getUser(db *sqlx.DB, userId int) (User, error) {
 	var u User
-	if dbErr := db.QueryRowx(selectUserFromUsername, username).StructScan(&u); dbErr != nil {
+	if dbErr := db.QueryRowx(selectUserFromId, userId).StructScan(&u); dbErr != nil {
 		return User{}, api.ApiError{
 			Status: api.UsernameNotFound,
-			Message: "Username not found",
+			Message: "User not found",
 		}
 	}
+	return u, nil
+}
+
+func GetUserFromPassword(db *sqlx.DB, username string, password string) (User, error) {
+	u, _ := getUserFromUsername(db, username)
 	if validated := ValidatePassword([]byte(u.Password), password); validated == true {
 		return u, nil
 	}
@@ -26,6 +32,17 @@ func GetUserFromPassword(db *sqlx.DB, username string, password string) (User, e
 		Status: api.IncorrectPassword,
 		Message: "Incorrect password",
 	}
+}
+
+func getUserFromUsername(db *sqlx.DB, username string) (User, error) {
+	var u User
+	if dbErr := db.QueryRowx(selectUserFromUsername, username).StructScan(&u); dbErr != nil {
+		return User{}, api.ApiError{
+			Status: api.UsernameNotFound,
+			Message: "Username not found",
+		}
+	}
+	return u, nil
 }
 
 func insertUserProfile(db *sqlx.DB, u User, up UserProfile) (UserProfile, error) {
@@ -84,7 +101,7 @@ func updateUser(db *sqlx.DB, user User, username, password, email string) (User,
 		email = user.Email
 	}
 
-	if dbErr := db.QueryRowx(update_user, username, password, email).StructScan(&userUpdated); dbErr != nil {
+	if dbErr := db.QueryRowx(update_user, time.Now(), username, password, email, user.ID).StructScan(&userUpdated); dbErr != nil {
 		return User{}, nil
 	}
 	return userUpdated, nil
@@ -107,6 +124,8 @@ func getUserProfileFromUser(db *sqlx.DB, u User) (UserProfile, error) {
 	}
 	return up, nil
 }
+
+const selectUserFromId = `SELECT id, username, password FROM users WHERE id=$1`
 
 const selectUserFromUsername = `SELECT id, username, password FROM users WHERE username=$1`
 

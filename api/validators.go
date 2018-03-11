@@ -4,13 +4,11 @@ import (
 	"gopkg.in/validator.v2"
 	"net/http"
 	"encoding/json"
-	"github.com/gorilla/mux"
 )
 
 
 func ValidateGetReq(r *http.Request) (map[string]string, error) {
-	vars := mux.Vars(r)
-	return vars, nil
+	return map[string]string{}, nil
 }
 
 func genericValidationError(error string) ([]byte, error) {

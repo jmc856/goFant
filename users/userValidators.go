@@ -28,23 +28,19 @@ func ValidateCreateUser(r *http.Request) (map[string]string, error) {
 }
 
 func ValidateUpdateUser(r *http.Request) (map[string]string, error) {
-	type UpdateeUserRequest struct {
-		Username		string			`validate:"min=3,max=40,regexp=^[a-zA-Z]"`
-		Password		string			`validate:"min=8"`
-		NewUsername     string
-		NewPassword     string			`validate:"min=8"`
-		NewEmail        string
+	type UpdateUserRequest struct {
+		NewUsername     string			`validate:"min=8"   json:"new_username"`
+		NewPassword     string			`validate:"min=8"   json:"new_password"`
+		NewEmail        string			`validate:"min=8"   json:"new_email"`
 
 	}
-	var request UpdateeUserRequest
+	var request UpdateUserRequest
 	if err := json.NewDecoder(r.Body).Decode(&request); err != nil {
 		fmt.Println(err)
 		return nil, err
 	}
 
 	return map[string]string{
-		"username": request.Username,
-		"password": request.Password,
 		"new_username": request.NewUsername,
 		"new_password": request.NewPassword,
 		"new_email": request.NewEmail}, nil

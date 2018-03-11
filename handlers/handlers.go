@@ -44,11 +44,11 @@ func updateUser(env *api.Env, _ http.ResponseWriter, _ *http.Request, params map
 	return users.UpdateUser(env.DB, params)
 }
 
-func getUserTeams(env *api.Env, _ http.ResponseWriter, _ *http.Request, params map[string]string) ([]byte, error) {
+func listUserTeams(env *api.Env, _ http.ResponseWriter, _ *http.Request, params map[string]string) ([]byte, error) {
 	return leagues.GetUserTeams(env.DB, params)
 }
 
-func getLeagueTeams(env *api.Env, _ http.ResponseWriter, _ *http.Request, params map[string]string) ([]byte, error) {
+func listLeaguesTeams(env *api.Env, _ http.ResponseWriter, _ *http.Request, params map[string]string) ([]byte, error) {
 	return leagues.GetLeagueTeams(env.DB, params)
 }
 
@@ -100,18 +100,17 @@ func Handlers(db *sqlx.DB) *mux.Router {
 	r := mux.NewRouter()
 	r.HandleFunc("/", handleMain)
 	r.HandleFunc("/get-token", authorization.GetTokenHandler).Methods("GET")
+
 	r.Handle("/login", api.Handler{ env, api.Validator{api.ValidateLogin}, handleLogin}).Methods("POST")
 	r.Handle("/YahooLogin",  api.Handler{env, api.Validator{yahoo.ValidateYahooLogin}, handleYahooLogin}).Methods("POST")
 	r.Handle("/YahooCallback", api.Handler{env, api.Validator{yahoo.ValidateYahooCallback}, handleYahooCallback}).Methods("POST")
 
-	//THIS IS A TESTING ENDPOINT
 	r.Handle("/users/{userId:[0-9]+}", jwtMiddleware.Handler(api.Handler{ env, api.Validator{api.ValidateGetReq}, getUser})).Methods("GET")
-	//
 	r.Handle("/users", jwtMiddleware.Handler(api.Handler{ env, api.Validator{users.ValidateCreateUser}, createUser})).Methods("POST")
-	r.Handle("/users/{userId:[0-9]+}", api.Handler{env, api.Validator{users.ValidateUpdateUser}, updateUser}).Methods("PUT")
-	r.Handle("/users/teams", api.Handler{ env, api.Validator{api.ValidateUserTeams}, getUserTeams})
+	r.Handle("/users/{userId:[0-9]+}", jwtMiddleware.Handler(api.Handler{env, api.Validator{users.ValidateUpdateUser}, updateUser})).Methods("PUT")
+	r.Handle("/users/teams", jwtMiddleware.Handler(api.Handler{ env, api.Validator{api.ValidateUserTeams}, listUserTeams})).Methods("GET")
 
-	r.Handle("/leagues/getLeagueTeams", api.Handler{ env, api.Validator{api.ValidateLeagueTeams}, getLeagueTeams})
+	r.Handle("/leagues/teams", api.Handler{ env, api.Validator{api.ValidateLeagueTeams}, listLeaguesTeams})
 
 	r.Handle("/rosters/getRoster", api.Handler{ env, api.Validator{api.ValidateGetRoster}, getRoster})
 	r.Handle("/rosters/getpositiontypes", api.Handler{ env, api.Validator{rosters.ValidateGetPositionTypes}, getPositionTypes})

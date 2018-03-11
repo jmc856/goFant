@@ -9,9 +9,10 @@ import (
 	"crypto/rand"
 	"github.com/jmoiron/sqlx"
 	"gofant/authorization"
+	"strconv"
 )
 
-func generateRandom() string {
+func GenerateRandom() string {
 	n := 15
 	b := make([]byte, n)
 	if _, err := rand.Read(b); err != nil {
@@ -24,7 +25,14 @@ func generateRandom() string {
 
 func GetUser(db *sqlx.DB, params map[string]string) ([]byte, error) {
 	fmt.Println(params)
-	return nil, nil
+	userId, err := strconv.Atoi(params["userId"])
+	user, err := getUser(db, userId)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return UserSerializer(user)
 }
 
 func CreateUser(db *sqlx.DB, params map[string]string) ([]byte, error) {
@@ -34,7 +42,7 @@ func CreateUser(db *sqlx.DB, params map[string]string) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	state := generateRandom()
+	state := GenerateRandom()
 
 	// store user
 	userNew, userErr := insertUser(db, params["Username"], string(password), state)
@@ -45,13 +53,13 @@ func CreateUser(db *sqlx.DB, params map[string]string) ([]byte, error) {
 }
 
 func UpdateUser(db *sqlx.DB, params map[string]string) ([]byte, error) {
+	// TODO: Check if request user has access to update userId
 
-	u, err := GetUserFromPassword(db, params["username"], params["password"])
+	userId, err := strconv.Atoi(params["userId"])
+	u, err := getUser(db, userId)
 
 	if err != nil {
 		return nil, err
-		//not_found_user := User{Username: u.NewUsername}
-		//return notFoundUserErrorSerializer(not_found_user)
 	}
 	// Save new values
 	userNew, err := updateUser(db, u, params["new_username"], params["new_password"], params["new_email"])

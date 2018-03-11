@@ -17,7 +17,7 @@ import (
 var (
 	server *httptest.Server
 	reader io.Reader
-	createUserUrl string
+	userUrl string
 	getTokenUrl string
 )
 
@@ -77,9 +77,8 @@ func TestMain(m *testing.M) {
 func (ta testApp) initialize() {
 	ta.buildSchema()
 	server := ta.runserver()
-	createUserUrl = fmt.Sprintf("%s/users", server.URL)
+	userUrl = fmt.Sprintf("%s/users", server.URL)
 	getTokenUrl = fmt.Sprintf("%s/get-token", server.URL)
-	fmt.Println(getTokenUrl)
 }
 
 func getToken() string {

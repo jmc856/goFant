@@ -7,6 +7,7 @@ import (
 	"log"
 	"fmt"
 	"strings"
+	"github.com/gorilla/mux"
 )
 
 type YahooApiError struct {
@@ -78,16 +79,27 @@ func (h Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Gets path variables from request and adds to params
+	vars := mux.Vars(r)
+	for k, v := range vars {
+		params[k] = v
+	}
+
 	accessToken := r.Header.Get("Authorization")
 	if accessToken != "" {
 		splitToken := strings.Split(accessToken, "Bearer")
-		accessToken = splitToken[1]
+		accessToken = splitToken[1][1:]
 		username, _ := getUserFromAccessToken(h.Env.DB, accessToken)
-		params["username"] = username
+		params["request_username"] = username
 	}
 
-
 	jsonResult, err := h.H(h.Env, w, r, params)
+	switch r.Method {
+		case "POST":
+			w.WriteHeader(http.StatusCreated)
+		case "DELETE":
+			w.WriteHeader(http.StatusNoContent)
+	}
 	if err != nil {
 		switch e := err.(type) {
 		case Error:
@@ -121,8 +133,9 @@ func returnJson(w http.ResponseWriter, json []byte) int {
 }
 
 func getUserFromAccessToken(db *sqlx.DB, accessToken string) (string, error) {
+
 	var username string
-	if dbErr := db.Select(&username ,selectUserFromAccessToken, accessToken); dbErr != nil {
+	if dbErr := db.QueryRowx(selectUserFromAccessToken, accessToken).Scan(&username); dbErr != nil {
 		fmt.Println(dbErr)
 		return "", dbErr
 	}
