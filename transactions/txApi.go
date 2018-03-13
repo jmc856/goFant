@@ -8,21 +8,16 @@ import (
 )
 
 func CreateTransaction(db *sqlx.DB, params map[string]string) ([]byte, error) {
-	user, userErr :=users.GetUserFromPassword(db, params["username"], params["password"])
-	if userErr != nil {
-		return nil, userErr
-	}
-
 	var userTeamSendId int
 	var userTeamReceiveId int
-	db.QueryRowx(GET_USER_TEAM_BY_TEAM_KEY_AND_USER_ID, params["team_key_send"], user.ID).Scan(&userTeamSendId)
+	db.QueryRowx(selectUserTeamByTeamKeyAndId, params["team_key_send"], params["user_id"]).Scan(&userTeamSendId)
 
 	var userReceive users.User
-	db.QueryRowx(GET_USER_BY_GUID, params["user_receive_guid"]).StructScan(&userReceive)
-	db.QueryRowx(GET_USER_TEAM_BY_TEAM_KEY_AND_USER_ID, params["team_key_receive"], userReceive.ID).Scan(&userTeamReceiveId)
+	db.QueryRowx(selectUserByGuid, params["user_receive_guid"]).StructScan(&userReceive)
+	db.QueryRowx(selectUserTeamByTeamKeyAndId, params["team_key_receive"], userReceive.ID).Scan(&userTeamReceiveId)
 
 	var tx Tx
-	err := db.QueryRowx(CREATE_TX, userTeamSendId, userTeamReceiveId, params["amount"], params["odds"]).StructScan(&tx)
+	err := db.QueryRowx(createTx, userTeamSendId, userTeamReceiveId, params["amount"], params["odds"]).StructScan(&tx)
 	if err != nil {
 		return nil, api.ApiError{
 			Status: api.UnknownError,
@@ -31,7 +26,7 @@ func CreateTransaction(db *sqlx.DB, params map[string]string) ([]byte, error) {
 	}
 
 	var txd TxDeail
-	errTxDetail := db.QueryRowx(CREATE_TX_DETAIL, tx.Id, params["description"], params["week"],
+	errTxDetail := db.QueryRowx(createTxDetail, tx.Id, params["description"], params["week"],
 		         params["player_id_send"], params["player_name_send"],
 				 params["player_id_receive"], params["player_name_receive"],
 		         params["action"]).StructScan(&txd)
@@ -48,8 +43,9 @@ func CreateTransaction(db *sqlx.DB, params map[string]string) ([]byte, error) {
 func GetTransaction(db *sqlx.DB, params map[string]string) ([]byte, error) {
 	var tx Tx
 	var detail TxDeail
+	txId, _ := strconv.Atoi(params["txId"])
 
-	rows, _ := db.Queryx(GET_TX, params["transaction_id"])
+	rows, _ := db.Queryx(getTx, txId)
 	if rows.Next() == false {
 		return nil, api.ApiError{
 			Status: api.UnknownError,
@@ -62,7 +58,7 @@ func GetTransaction(db *sqlx.DB, params map[string]string) ([]byte, error) {
 		}
 	}
 
-	dbErr2 :=db.Get(&detail, get_tx_detail, params["transaction_id"])
+	dbErr2 := db.Get(&detail, getTxDetail, txId)
 	if dbErr2 != nil {
 		return nil, dbErr2
 	}
@@ -72,34 +68,24 @@ func GetTransaction(db *sqlx.DB, params map[string]string) ([]byte, error) {
 
 
 func ListTransactions(db *sqlx.DB, params map[string]string) ([]byte, error) {
-	user, userErr :=users.GetUserFromPassword(db, params["username"], params["password"])
-	if userErr != nil {
-		return nil, userErr
-	}
-
 	var txList []CombinedTx
+	userId, _ := strconv.Atoi(params["user_id"])
 
-	dbErr := db.Select(&txList, GET_TX_FOR_USER, user.ID)
+	dbErr := db.Select(&txList, getTxForUser, userId)
 	if dbErr != nil {
 		return nil, dbErr
 	}
-
 	// Check and update status of transactions
 
 	return ListTxSerializer(txList)
 }
 
 
-func AcceptTransaction(db *sqlx.DB, params map[string]string) ([]byte, error) {
-	user, userErr :=users.GetUserFromPassword(db, params["username"], params["password"])
-	if userErr != nil {
-		return nil, userErr
-	}
-
+func EditTransaction(db *sqlx.DB, params map[string]string) ([]byte, error) {
 	var userTeamReceiveId int
-	txId, _ := strconv.Atoi(params["transaction_id"])
+	txId, _ := strconv.Atoi(params["txId"])
 
-	rows, _ := db.Queryx(GET_USER_TEAM_RECEIVE_ID, txId)
+	rows, _ := db.Queryx(getUserTeamReceiveId, txId)
 	if rows.Next() == false {
 		return nil, api.ApiError{
 			Status: api.UnknownError,
@@ -114,7 +100,8 @@ func AcceptTransaction(db *sqlx.DB, params map[string]string) ([]byte, error) {
 
 	var userTeamIds []int
 	var myTx bool
-	db.Select(&userTeamIds, GET_USER_TEAMS_FROM_USER_ID, int(user.ID))
+	userId, _ := strconv.Atoi(params["user_id"])
+	db.Select(&userTeamIds, getUserTeamsFromUserId, userId)
 
 	for _, b := range userTeamIds {
 		if b == userTeamReceiveId {
@@ -127,7 +114,7 @@ func AcceptTransaction(db *sqlx.DB, params map[string]string) ([]byte, error) {
 	}
 
 	var tx Tx
-	db.QueryRowx(ACCEPT_TX, txId).StructScan(&tx)
+	db.QueryRowx(acceptTx, txId).StructScan(&tx)
 
 	return TxSerializer(tx)
 }

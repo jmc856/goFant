@@ -76,8 +76,8 @@ func listTransaction(env *api.Env, _ http.ResponseWriter, _ *http.Request, param
 	return transactions.ListTransactions(env.DB, params)
 }
 
-func acceptTransaction(env *api.Env, _ http.ResponseWriter, _ *http.Request, params map[string]string) ([]byte, error) {
-	return transactions.AcceptTransaction(env.DB, params)
+func editTransaction(env *api.Env, _ http.ResponseWriter, _ *http.Request, params map[string]string) ([]byte, error) {
+	return transactions.EditTransaction(env.DB, params)
 }
 
 /* Set up a global string for our secret */
@@ -110,16 +110,16 @@ func Handlers(db *sqlx.DB) *mux.Router {
 	r.Handle("/users/{userId:[0-9]+}", jwtMiddleware.Handler(api.Handler{env, api.Validator{users.ValidateUpdateUser}, updateUser})).Methods("PUT")
 	r.Handle("/users/teams", jwtMiddleware.Handler(api.Handler{ env, api.Validator{api.ValidateUserTeams}, listUserTeams})).Methods("GET")
 
-	r.Handle("/leagues/teams", api.Handler{ env, api.Validator{api.ValidateLeagueTeams}, listLeaguesTeams})
+	r.Handle("/leagues/teams", jwtMiddleware.Handler(api.Handler{ env, api.Validator{api.ValidateLeagueTeams}, listLeaguesTeams})).Methods("GET")
 
-	r.Handle("/rosters/getRoster", api.Handler{ env, api.Validator{api.ValidateGetRoster}, getRoster})
-	r.Handle("/rosters/getpositiontypes", api.Handler{ env, api.Validator{rosters.ValidateGetPositionTypes}, getPositionTypes})
-	r.Handle("/rosters/getstatcategories", api.Handler{ env, api.Validator{rosters.ValidateGetStatCategories}, getStatCategories})
+	r.Handle("/rosters", jwtMiddleware.Handler(api.Handler{ env, api.Validator{api.ValidateGetRoster}, getRoster})).Methods("GET")
+	r.Handle("/rosters/positions", jwtMiddleware.Handler(api.Handler{ env, api.Validator{rosters.ValidateRosterPositions}, getPositionTypes})).Methods("GET")
+	r.Handle("/rosters/stats/categories", jwtMiddleware.Handler(api.Handler{ env, api.Validator{rosters.ValidateStatCategories}, getStatCategories})).Methods("GET")
 
-	r.Handle("/transactions/create", api.Handler{ env, api.Validator{transactions.ValidateCreateTransaction}, createTransaction})
-	r.Handle("/transactions/get", api.Handler{ env, api.Validator{transactions.ValidateGetTransaction}, getTransaction})
-	r.Handle("/transactions/list", api.Handler{env, api.Validator{transactions.ValidateListTransaction}, listTransaction})
-	r.Handle("/transactions/accept", api.Handler{env, api.Validator{transactions.ValidateAcceptTransaction}, acceptTransaction})
+	r.Handle("/transactions", jwtMiddleware.Handler(api.Handler{ env, api.Validator{transactions.ValidateCreateTransaction}, createTransaction})).Methods("POST")
+	r.Handle("/transactions/{txId:[0-9]+}",jwtMiddleware.Handler( api.Handler{ env, api.Validator{api.ValidateGetReq}, getTransaction})).Methods("GET")
+	r.Handle("/transactions", jwtMiddleware.Handler(api.Handler{env, api.Validator{transactions.ValidateListTransaction}, listTransaction})).Methods("GET")
+	r.Handle("/transactions/{txId:[0-9]+}", jwtMiddleware.Handler(api.Handler{env, api.Validator{transactions.ValidateEditTransaction}, editTransaction})).Methods("PUT")
 
 	return r
 }

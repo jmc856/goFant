@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"strings"
 	"github.com/gorilla/mux"
+	"strconv"
 )
 
 type YahooApiError struct {
@@ -89,8 +90,9 @@ func (h Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	if accessToken != "" {
 		splitToken := strings.Split(accessToken, "Bearer")
 		accessToken = splitToken[1][1:]
-		username, _ := getUserFromAccessToken(h.Env.DB, accessToken)
-		params["request_username"] = username
+		userId, yahooAccessToken, _ := getUserIdFromAccessToken(h.Env.DB, accessToken)
+		params["request_user_id"] = userId
+		params["yahoo_access_token"] = yahooAccessToken
 	}
 
 	jsonResult, err := h.H(h.Env, w, r, params)
@@ -132,14 +134,14 @@ func returnJson(w http.ResponseWriter, json []byte) int {
 	return result
 }
 
-func getUserFromAccessToken(db *sqlx.DB, accessToken string) (string, error) {
-
-	var username string
-	if dbErr := db.QueryRowx(selectUserFromAccessToken, accessToken).Scan(&username); dbErr != nil {
+func getUserIdFromAccessToken(db *sqlx.DB, accessToken string) (string, string, error) {
+	var userId int
+	var yahooAccessToken string
+	if dbErr := db.QueryRowx(selectUserIdFromAccessToken, accessToken).Scan(&userId, &yahooAccessToken); dbErr != nil {
 		fmt.Println(dbErr)
-		return "", dbErr
+		return "", "", dbErr
 	}
-	return username, nil
+	return strconv.Itoa(userId), yahooAccessToken, nil
 }
 
-const selectUserFromAccessToken = `SELECT u.username FROM users u JOIN user_credentials uc ON u.id=uc.user_id WHERE uc.access_token=$1`
+const selectUserIdFromAccessToken = `SELECT u.id, uc.yahoo_access_token FROM users u JOIN user_credentials uc ON u.id=uc.user_id WHERE uc.access_token=$1`

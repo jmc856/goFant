@@ -12,13 +12,11 @@ func GetRoster(_ *sqlx.DB, params map[string]string) ([]byte, error) {
 
 	leagueTeamKey := makeLeagueTeamKey(params["league_key"], params["game_id"], params["team_id"])
 
-	if strings.ToLower(params["Refresh"]) == "true" {
-		//var result RosterApi
-		userRoster, err := getTeamRoster(params["access_token"], leagueTeamKey)
+	if strings.ToLower(params["refresh"]) == "true" {
+		userRoster, err := getTeamRoster(params["yahoo_access_token"], leagueTeamKey)
 		if err != nil {
 			return nil, err
 		}
-
 		return userRoster, nil
 
 	} else {
@@ -32,10 +30,9 @@ func GetRoster(_ *sqlx.DB, params map[string]string) ([]byte, error) {
 
 
 func GetPositionTypes(db *sqlx.DB, params map[string]string) ([]byte, error) {
-
 	// Refresh database
 	if params["refresh"] == "true" {
-		if err := getAndSavePositionTypes(db, params["access_token"], params["game_key"]); err != nil {
+		if err := getAndSavePositionTypes(db, params["yahoo_access_token"], params["game_key"]); err != nil {
 			return nil, api.ApiError{}
 		}
 	}
@@ -51,7 +48,7 @@ func GetPositionTypes(db *sqlx.DB, params map[string]string) ([]byte, error) {
 func GetStatCategories(db *sqlx.DB, params map[string]string) ([]byte, error) {
 	// Refresh database
 	if params["refresh"] == "true" {
-		if err := getAndSaveStatCategories(db, params["access_token"], params["game_key"]); err != nil {
+		if err := getAndSaveStatCategories(db, params["yahoo_access_token"], params["game_key"]); err != nil {
 			return nil, api.ApiError{}
 		}
 	}

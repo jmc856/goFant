@@ -11,7 +11,7 @@ import (
 
 var AllGameCodes = []string{"nfl", "mlb", "nhl", "nba"}
 
-func getUserTeam(accessToken string, gameId string, season string) ([]byte, error) {
+func getUserTeam(yahooAccessToken string, gameId string, season string) ([]byte, error) {
 	var format = "xml"
 
 	if !_checkElement(gameId, AllGameCodes) {
@@ -20,7 +20,7 @@ func getUserTeam(accessToken string, gameId string, season string) ([]byte, erro
 
 	var apiUrl = fmt.Sprintf(api.BaseYahooApi+ "/users;use_login=1/games;season='%s';game_keys=%s/teams?format=%s", season, gameId, format)
 
-	contents, err := api.DoRequest(string(apiUrl), accessToken)
+	contents, err := api.DoRequest(string(apiUrl), yahooAccessToken)
 
 	if err != nil {
 		errors.New("I dno")
@@ -29,7 +29,7 @@ func getUserTeam(accessToken string, gameId string, season string) ([]byte, erro
 	return contents, nil
 }
 
-func saveUserTeams(db *sqlx.DB, accessToken, userId string, userTeams UserTeamApiXml) error {
+func saveUserTeams(db *sqlx.DB, yahooAccessToken, userId string, userTeams UserTeamApiXml) error {
 	var teamStruct Team
 	var league League
 	teams := userTeams.Users[0].Games[0].Teams
@@ -41,7 +41,7 @@ func saveUserTeams(db *sqlx.DB, accessToken, userId string, userTeams UserTeamAp
 		rows, _ := db.Queryx(GET_LEAGUES, formatLeagueKey(gameId, leagueKey))
 
 		if rows.Next() == false {
-			leagueStruct, err := getOrCreateLeague(db, formatLeagueKey(gameId, leagueKey), accessToken)
+			leagueStruct, err := getOrCreateLeague(db, formatLeagueKey(gameId, leagueKey), yahooAccessToken)
 			if err != nil {
 				return err
 			}

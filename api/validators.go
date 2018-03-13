@@ -45,91 +45,63 @@ func ValidateLogin(r *http.Request) (map[string]string, error) {
 // Validates /roster/getRoster
 // Returns map of request payload or error in bytes
 func ValidateGetRoster(r *http.Request) (map[string]string, error) {
-	type RosterRequest struct {
-		Username 		string			`validate:"min=3,max=40,regexp=^[a-zA-Z]"`
-		Password 		string			`validate:"min=8"`
-		AccessToken 	string			`validate:"nonzero"`
-		Game_Id 		string			`validate:"nonzero"`
-		League_Key      string			`validate:"nonzero"`
-		Team_Id      	string			`validate:"nonzero"`
-		Refresh     	string			`validate:"regexp=^true$"`
-	}
-	var request RosterRequest
-	err := json.NewDecoder(r.Body).Decode(&request)
-	if err != nil {
-		return nil, err
+	type Filter struct {
+		GameId    []string `validate:"nonzero"`
+		LeagueKey []string `validate:"nonzero"`
+		TeamId    []string `validate:"nonzero"`
+		Season    []string `validate:"nonzero"`
 	}
 
-	if errs := validator.Validate(request); errs != nil {
+	teamId, _ := r.URL.Query()["team_id"]
+	gameId, _ := r.URL.Query()["game_id"]
+	leagueKey, _ := r.URL.Query()["league_key"]
+	season, _ := r.URL.Query()["season"]
+
+	filter := Filter{GameId: gameId, Season: season, TeamId: teamId, LeagueKey: leagueKey}
+	if errs := validator.Validate(filter); errs != nil {
 		return nil, errs
 	}
-	return map[string]string{
-		"Username":    		request.Username,
-		"Password":    		request.Password,
-		"access_token": 	request.AccessToken,
-		"game_id":      	request.Game_Id,
-		"league_key":      	request.League_Key,
-		"team_id":        	request.Team_Id,
-		"Refresh":     		request.Refresh,
-	}, nil
+	return RequestToMap(r), nil
+}
+
+func RequestToMap(r *http.Request) map[string]string {
+	m := map[string]string{}
+	for k, v := range r.Form {
+		m[k] = v[0]
+	}
+	return m
 }
 
 func ValidateUserTeams(r *http.Request) (map[string]string, error) {
-	type UserTeamsRequest struct {
-		Username 		string			`validate:"min=3,max=40,regexp=^[a-zA-Z]"`
-		Password 		string			`validate:"min=8"`
-		AccessToken 	string			`validate:"nonzero"`
-		Game_Id 		string			`validate:"nonzero"`
-		Season 			string			`validate:"nonzero"`
-		UserId          string          `validate:"nonzero" json:"user_id"`
-		Refresh     	string			`validate:"regexp=^true$"`
-	}
-	var request UserTeamsRequest
-
-	err := json.NewDecoder(r.Body).Decode(&request)
-	if err != nil {
-		return nil, err
+	type Filter struct {
+		GameId  []string `validate:"nonzero"`
+		Season  []string `validate:"nonzero"`
 	}
 
-	if errs := validator.Validate(request); errs != nil {
+	gameId, _ := r.URL.Query()["game_id"]
+	season, _ := r.URL.Query()["season"]
+
+	filter := Filter{GameId: gameId, Season: season}
+	if errs := validator.Validate(filter); errs != nil {
 		return nil, errs
 	}
-	return map[string]string{
-		"Username":    		request.Username,
-		"Password":    		request.Password,
-		"access_token":		request.AccessToken,
-		"game_id":      	request.Game_Id,
-		"Season":      		request.Season,
-		"user_id":			request.UserId,
-		"Refresh":     		request.Refresh,
-	}, nil
+	return RequestToMap(r), nil
 }
 
 func ValidateLeagueTeams(r *http.Request) (map[string]string, error) {
-	type UserTeamsRequest struct {
-		Username 	string			`validate:"min=3,max=40,regexp=^[a-zA-Z]"`
-		Password 	string			`validate:"min=8"`
-		AccessToken string			`validate:"nonzero"`
-		Game_Id 	string			`validate:"nonzero"`
-		League_Key  string			`validate:"nonzero"`
-		Refresh     string			`validate:"regexp=^true$"`
-	}
-	var request UserTeamsRequest
-
-	err := json.NewDecoder(r.Body).Decode(&request)
-	if err != nil {
-		return nil, err
+	type Filter struct {
+		GameId    []string `validate:"nonzero"`
+		LeagueKey []string `validate:"nonzero"`
+		Season    []string `validate:"nonzero"`
 	}
 
-	if errs := validator.Validate(request); errs != nil {
+	gameId, _ := r.URL.Query()["game_id"]
+	leagueKey, _ := r.URL.Query()["league_key"]
+	season, _ := r.URL.Query()["season"]
+
+	filter := Filter{GameId: gameId, Season: season, LeagueKey: leagueKey}
+	if errs := validator.Validate(filter); errs != nil {
 		return nil, errs
 	}
-	return map[string]string{
-		"Username":    		request.Username,
-		"Password":    		request.Password,
-		"access_token": 	request.AccessToken,
-		"game_id":      	request.Game_Id,
-		"league_key":   	request.League_Key,
-		"Refresh":     		request.Refresh,
-	}, nil
+	return RequestToMap(r), nil
 }

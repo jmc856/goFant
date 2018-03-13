@@ -7,6 +7,7 @@ import (
 	"bytes"
 	"io"
 	"fmt"
+	"gofant/api"
 )
 
 func validateApiCreds(r io.Reader) (map[string]string, error) {
@@ -33,9 +34,6 @@ type ApiCreds struct {
 
 func ValidateCreateTransaction(r *http.Request) (map[string]string, error) {
 	type TransactionRequest struct {
-		Username 			string			`validate:"min=3,max=40,regexp=^[a-zA-Z]"`
-		Password 			string			`validate:"min=8"   json:"password"`
-		AccessToken			string			`validate:"nonzero" json:"access_token"`
 		LeagueKey  			string			`validate:"nonzero" json:"league_key"`
 		TeamKeySender		string       	`validate:"nonzero" json:"team_key_send"`
 		TeamKeyRecipient	string    		`validate:"nonzero" json:"team_key_receive"`
@@ -63,9 +61,6 @@ func ValidateCreateTransaction(r *http.Request) (map[string]string, error) {
 		return nil, validationErr
 	}
 	params := map[string]string{
-		"username":             req.Username,
-		"password":				req.Password,
-		"access_token": 		req.AccessToken,
 		"league_key":   		req.LeagueKey,
 		"team_key_send":    	req.TeamKeySender,
 		"team_key_receive":  	req.TeamKeyRecipient,
@@ -83,56 +78,19 @@ func ValidateCreateTransaction(r *http.Request) (map[string]string, error) {
 	return params, nil
 }
 
-func ValidateGetTransaction(r *http.Request) (map[string]string, error) {
-	type TxGetRequest struct {
-		Username 			string			`validate:"min=3,max=40,regexp=^[a-zA-Z]"`
-		Password 			string			`validate:"min=8"   json:"password"`
-		AccessToken			string			`validate:"nonzero" json:"access_token"`
-		TransactionId  		string			`validate:"nonzero" json:"transaction_id"`
+func ValidateEditTransaction(r *http.Request) (map[string]string, error) {
+	type Filter struct {
+		Status	 []string
 	}
 
-	var req TxGetRequest
-	err := json.NewDecoder(r.Body).Decode(&req)
-	if err != nil {
-		return nil, err
-	}
+	status, _ := r.URL.Query()["status"]
+	filter := Filter{Status: status}
 
-	if errs := validator.Validate(req); errs != nil {
+	if errs := validator.Validate(filter); errs != nil {
 		return nil, errs
 	}
-	params := map[string]string{
-		"access_token": req.AccessToken,
-		"username":     req.Username,
-		"password":     req.Password,
-		"transaction_id": req.TransactionId,
-	}
-	return params, nil
-}
 
-func ValidateAcceptTransaction(r *http.Request) (map[string]string, error) {
-	type TransactionRequest struct {
-		Username 			string			`validate:"min=3,max=40,regexp=^[a-zA-Z]"`
-		Password 			string			`validate:"min=8"   json:"password"`
-		AccessToken			string			`validate:"nonzero" json:"access_token"`
-		TransactionId  		string				`validate:"nonzero" json:"transaction_id"`
-	}
-
-	var req TransactionRequest
-	err := json.NewDecoder(r.Body).Decode(&req)
-	if err != nil {
-		return nil, err
-	}
-
-	if errs := validator.Validate(req); errs != nil {
-		return nil, errs
-	}
-	params := map[string]string{
-		"access_token": req.AccessToken,
-		"username":     req.Username,
-		"password":     req.Password,
-		"transaction_id": req.TransactionId,
-	}
-	return params, nil
+	return api.RequestToMap(r), nil
 }
 
 
